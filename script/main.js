@@ -79,6 +79,33 @@ function setupTabs() {
   });
 }
 
+function setupSessionFilter(sessoes) {
+  const filterSelect = document.getElementById('session-filter');
+  if (!filterSelect) return;
+
+  // Popula o filtro com as sessões
+  const sessionOptions = sessoes.map(sessao => 
+    `<option value="${sessao.sessionTitle}">${sessao.sessionTitle} - ${sessao.room}</option>`
+  ).join('');
+  filterSelect.innerHTML += sessionOptions;
+
+  // Adiciona o listener para o evento de mudança
+  filterSelect.addEventListener('change', (e) => {
+    const selectedSession = e.target.value;
+    const allSessionCards = document.querySelectorAll('.session-card');
+
+    allSessionCards.forEach(card => {
+      if (selectedSession === 'all') {
+        card.style.display = ''; // Mostra todos os cards
+      } else {
+        // Mostra apenas o card que corresponde à sessão selecionada
+        const cardSessionTitle = card.getAttribute('data-session-title');
+        card.style.display = cardSessionTitle === selectedSession ? '' : 'none';
+      }
+    });
+  });
+}
+
 async function loadProgramacao() {
   try {
     const response = await fetch('database/programacao.json');
@@ -140,10 +167,10 @@ async function loadProgramacao() {
           : '';
 
         dailySessions[sessao.day] += `
-          <div class="session-card bg-ufc-mediumblue/50 rounded-xl p-6">
+          <div class="session-card bg-ufc-mediumblue/50 rounded-xl p-6" data-session-title="${sessao.sessionTitle}">
             <div class="border-b border-ufc-green/30 pb-4 mb-4">
               <p class="text-sm text-ufc-green font-semibold">${sessao.area}</p>
-              <h3 class="text-xl font-bold">${sessao.type} - ${sessao.sessionTitle} - ${sessao.room} </h3>
+              <h3 class="text-xl font-bold">${sessao.room}: ${sessao.sessionTitle} - ${sessao.type}</h3>
               <p class="text-sm text-white/80">${sessao.dateTime}</p>
             </div>
             <ul class="space-y-4">
@@ -161,6 +188,8 @@ async function loadProgramacao() {
         container.innerHTML = dailySessions[day];
       }
     }
+
+    setupSessionFilter(sessoes);
 
   } catch (error) {
     console.error('Erro ao carregar a programação:', error);

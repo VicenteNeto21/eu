@@ -64,8 +64,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Favicon -->
-  <link rel="icon" href="img/logo-eu-2025.png" type="image/png" />
-  <link rel="apple-touch-icon" href="img/logo-eu-2025.png" />
+  <link rel="icon" href="img/eu.png" type="image/png" />
+  <link rel="apple-touch-icon" href="img/eu.png" />
 
   <title>Encontros Universitários 2025 - UFC Crateús</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -134,8 +134,8 @@
       <nav class="hidden md:block" aria-label="Main navigation" role="navigation">
         <ul class="flex space-x-6">
           <li><a href="#sobre" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Sobre o evento">Sobre</a></li>
-          <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Inscrição no evento">Inscrição</a></li>
           <li><a href="#programacao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Programação do evento">Programação</a></li>
+          <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Inscrição no evento">Inscrição</a></li>
           <li><a href="#edital" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Editais e comunicados">Edital</a></li>
           <li><a href="#contato" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Contato com a organização">Contato</a></li>
         </ul>
@@ -152,8 +152,8 @@
       <ul class="flex flex-col space-y-4">
         <li><a href="#sobre" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Sobre</a></li>
         <li><a href="#programacao" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Programação</a></li>
-                <li><a href="#edital" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Edital</a></li>
         <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Inscrição</a></li>
+        <li><a href="#edital" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Edital</a></li>
         <li><a href="#contato" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Contato</a></li>
       </ul>
     </div>
@@ -390,7 +390,7 @@
   </section>
 
   <!-- Modalidades -->
-  <section class="py-16 sm:py-20 px-4 sm:px-6 bg-ufc-mediumblue">
+  <section id="modalidades" class="py-16 sm:py-20 px-4 sm:px-6 bg-ufc-mediumblue">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">Modalidades de Apresentação</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
@@ -428,6 +428,15 @@
         <button id="tab-dia-10" role="tab" aria-controls="panel-dia-10" aria-selected="true" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-ufc-green text-ufc-green">10/11</button>
         <button id="tab-dia-11" role="tab" aria-controls="panel-dia-11" aria-selected="false" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-transparent text-white/70 hover:text-white" tabindex="-1">11/11</button>
         <button id="tab-dia-12" role="tab" aria-controls="panel-dia-12" aria-selected="false" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-transparent text-white/70 hover:text-white" tabindex="-1">12/11</button>
+      </div>
+
+      <!-- Filtro de Sessão -->
+      <div class="mb-8 max-w-sm mx-auto">
+        <label for="session-filter" class="sr-only">Filtrar por sessão</label>
+        <select id="session-filter" class="block w-full bg-ufc-mediumblue/60 border border-ufc-green/30 rounded-md py-2 px-3 text-sm focus:outline-none focus:ring-1 focus:ring-ufc-green focus:border-ufc-green">
+          <option value="all">Todas as Sessões</option>
+          <!-- Opções de sessão serão inseridas aqui pelo JavaScript -->
+        </select>
       </div>
 
       <!-- Conteúdo das Abas -->
@@ -478,7 +487,6 @@
             </svg>
             Email Oficial
           </h3>
-          <a href="mailto:eventos@crateus.ufc.br" class="text-base sm:text-lg hover:text-ufc-green transition">eventos@crateus.ufc.br</a>
           <a href="mailto:crateus@ufc.br" class="text-base sm:text-lg hover:text-ufc-green transition">crateus@ufc.br</a>
           <p class="mt-4 text-white/70 text-sm sm:text-base">Respondemos em até 48 horas úteis</p>
         </div>
@@ -511,7 +519,7 @@
           Enable JavaScript to see Google Maps.
         </div>
       </noscript>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.925096756705!2d-40.6430267!3d-5.1868803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x796f5c79bc257a3:0x3e32c3e04fe73b21!2sAv.%20Prfa.%20Machadinha%20Lima%2C%20Crate%C3%BAs%2C%20CE%2C%2063700-000!5e0!3m2!1spt-BR!2sbr!4v1722292380!5m2!1spt-BR!2sbr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe title="Mapa da localização da UFC Campus Crateús" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.925096756705!2d-40.6430267!3d-5.1868803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x796f5c79bc257a3:0x3e32c3e04fe73b21!2sAv.%20Prfa.%20Machadinha%20Lima%2C%20Crate%C3%BAs%2C%20CE%2C%2063700-000!5e0!3m2!1spt-BR!2sbr!4v1722292380!5m2!1spt-BR!2sbr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <div class="mt-6 text-center">
       <h4 class="text-lg sm:text-xl font-bold flex items-center justify-center gap-2">
@@ -575,18 +583,18 @@
           <h3 class="text-lg sm:text-xl font-bold mb-4">Navegação</h3>
           <ul class="space-y-2">
             <li><a href="#sobre" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Sobre o evento">Sobre</a></li>
-            <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Inscrição no evento">Inscrição</a></li>
             <li><a href="#programacao" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Programação do evento">Programação</a></li>
-            <li><a href="#edital" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Editais e comunicados">Editais</a></li>
+            <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Inscrição no evento">Inscrição</a></li>
+            <li><a href="#edital" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Editais e comunicados">Edital</a></li>
           </ul>
         </div>
         <div>
           <h3 class="text-lg sm:text-xl font-bold mb-4">Informações</h3>
           <ul class="space-y-2">
-            <li><a href="#" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Objetivo do evento">Objetivo</a></li>
-            <li><a href="#" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Público-alvo do evento">Público-alvo</a></li>
-            <li><a href="#" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Modalidades de apresentação">Modalidades</a></li>
-            <li><a href="#" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Comunicados do evento">Comunicados</a></li>
+            <li><a href="#sobre" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Objetivo do evento">Objetivo</a></li>
+            <li><a href="#sobre" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Público-alvo do evento">Público-alvo</a></li>
+            <li><a href="#modalidades" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Modalidades de apresentação">Modalidades</a></li>
+            <li><a href="#edital" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Cronograma de atividades">Cronograma</a></li>
           </ul>
         </div>
         <div>
