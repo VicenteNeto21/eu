@@ -79,40 +79,6 @@ function setupTabs() {
   });
 }
 
-// --- Programação Dinâmica ---
-function setupProgramacaoSearch() {
-  const searchInput = document.getElementById('search-programacao');
-  const noResultsMessage = document.getElementById('no-results');
-
-  searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.toLowerCase().trim();
-    let hasVisibleResults = false;
-
-    const allSessions = document.querySelectorAll('#programacao-content .session-card');
-
-    allSessions.forEach(session => {
-      const presentations = session.querySelectorAll('li');
-      let sessionHasVisibleItems = false;
-
-      presentations.forEach(li => {
-        const text = li.textContent.toLowerCase();
-        const isVisible = text.includes(searchTerm);
-        li.style.display = isVisible ? '' : 'none';
-        if (isVisible) sessionHasVisibleItems = true;
-      });
-
-      if (sessionHasVisibleItems) {
-        session.style.display = '';
-        hasVisibleResults = true;
-      } else {
-        session.style.display = 'none';
-      }
-    });
-
-    noResultsMessage.style.display = hasVisibleResults ? 'none' : 'block';
-  });
-}
-
 async function loadProgramacao() {
   try {
     const response = await fetch('database/programacao.json');
@@ -124,61 +90,67 @@ async function loadProgramacao() {
       return numA - numB;
     });
 
-    sessoes.forEach(sessao => {
-      const container = document.getElementById(`panel-dia-${sessao.day}`);
-      if (!container) return;
+    // Otimização: Agrupar sessões por dia para renderizar de uma vez
+    const dailySessions = { 10: '', 11: '', 12: '' };
 
-      // --- Lógica para calcular horário de início das apresentações ---
-      const timeRegex = /(\d{2}:\d{2})/;
-      const match = sessao.dateTime.match(timeRegex);
-      let currentTime = null;
+    for (const sessao of sessoes) {
+      if (dailySessions[sessao.day] !== undefined) {
+        // --- Lógica para calcular horário de início das apresentações ---
+        const timeRegex = /(\d{2}:\d{2})/;
+        const match = sessao.dateTime.match(timeRegex);
+        let currentTime = null;
 
-      if (match) {
-        const [startHour, startMinute] = match[1].split(':').map(Number);
-        currentTime = new Date();
-        currentTime.setHours(startHour, startMinute, 0, 0);
-      }
-
-      const presentationDuration = {
-        'Apresentação Oral': 15, // minutos
-        'Pitch': 10, // minutos
-      };
-      const durationInMinutes = presentationDuration[sessao.type];
-      // --- Fim da lógica de horário ---
-
-      const presentationsHTML = sessao.presentations.map(p => {
-        let timeHTML = '';
-        if (currentTime && durationInMinutes) {
-          const hours = currentTime.getHours().toString().padStart(2, '0');
-          const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-          timeHTML = `<span class="text-xs text-ufc-green font-mono mr-2">[${hours}:${minutes}]</span>`;
-          currentTime.setMinutes(currentTime.getMinutes() + durationInMinutes);
+        if (match) {
+          const [startHour, startMinute] = match[1].split(':').map(Number);
+          currentTime = new Date();
+          currentTime.setHours(startHour, startMinute, 0, 0);
         }
 
-        return `<li>
-          <p class="font-medium text-white/95">${timeHTML}${p.title}</p>
-          ${p.author ? `<p class="text-sm text-white/70 pt-1 pl-4">- ${p.author}</p>` : ''}
-        </li>`;
-      }).join('');
+        const presentationDuration = {
+          'Apresentação Oral': 15, // minutos
+          'Pitch': 10, // minutos
+        };
+        const durationInMinutes = presentationDuration[sessao.type];
+        // --- Fim da lógica de horário ---
 
-      const durationHTML = sessao.duration ? `| Duração: ${sessao.duration}` : '';
+        const presentationsHTML = sessao.presentations.map(p => {
+          let timeHTML = '';
+          if (currentTime && durationInMinutes) {
+            const hours = currentTime.getHours().toString().padStart(2, '0');
+            const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+            timeHTML = `<span class="text-xs text-ufc-green font-mono mr-2">[${hours}:${minutes}]</span>`;
+            currentTime.setMinutes(currentTime.getMinutes() + durationInMinutes);
+          }
 
-      const sessaoHTML = `
-        <div class="session-card bg-ufc-mediumblue/50 rounded-xl p-6">
-          <div class="border-b border-ufc-green/30 pb-4 mb-4">
-            <p class="text-sm text-ufc-green font-semibold">${sessao.area}</p>
-            <h3 class="text-xl font-bold">${sessao.type}: "${sessao.sessionTitle}"</h3>
-            <p class="text-sm text-white/80">${sessao.dateTime} ${durationHTML}</p>
-          </div>
-          <ul class="space-y-4">
-            ${presentationsHTML}
-          </ul>
-        </div>
-      `;
-      container.innerHTML += sessaoHTML;
-    });
+          return `<li>
+            <p class="font-medium text-white/95">${timeHTML}${p.title}</p>
+            ${p.author ? `<p class="text-sm text-white/70 pt-1 pl-4">- ${p.author}</p>` : ''}
+          </li>`;
+        }).join('');
 
-    setupProgramacaoSearch();
+        const durationHTML = sessao.duration ? `| Duração: ${sessao.duration}` : '';
+
+        dailySessions[sessao.day] += `
+          <div class="session-card bg-ufc-mediumblue/50 rounded-xl p-6">
+            <div class="border-b border-ufc-green/30 pb-4 mb-4">
+              <p class="text-sm text-ufc-green font-semibold">${sessao.area}</p>
+              <h3 class="text-xl font-bold">${sessao.type}: "${sessao.sessionTitle}"</h3>
+              <p class="text-sm text-white/80">${sessao.dateTime} ${durationHTML}</p>
+            </div>
+            <ul class="space-y-4">
+              ${presentationsHTML}
+            </ul>
+          </div>`;
+      }
+    }
+
+    // Inserir o HTML no DOM de uma só vez para cada dia
+    for (const day in dailySessions) {
+      const container = document.getElementById(`panel-dia-${day}`);
+      if (container) {
+        container.innerHTML = dailySessions[day];
+      }
+    }
 
   } catch (error) {
     console.error('Erro ao carregar a programação:', error);
