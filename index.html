@@ -141,20 +141,20 @@
         </ul>
       </nav>
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle mobile menu">
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu de navegação" aria-controls="mobile-menu" aria-expanded="false">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </div>
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-ufc-darkblue p-4" role="navigation" aria-label="Mobile navigation">
+    <div id="mobile-menu" class="hidden md:hidden bg-ufc-darkblue p-4" role="navigation" aria-label="Navegação móvel">
       <ul class="flex flex-col space-y-4">
-        <li><a href="#sobre" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Sobre o evento">Sobre</a></li>
-        <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Inscrição no evento">Inscrição</a></li>
-        <li><a href="#edital" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Editais e comunicados">Edital</a></li>
-        <li><a href="#programacao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Programação do evento">Programação</a></li>
-        <li><a href="#contato" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Contato com a organização">Contato</a></li>
+        <li><a href="#sobre" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Sobre</a></li>
+        <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Inscrição</a></li>
+        <li><a href="#edital" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Edital</a></li>
+        <li><a href="#programacao" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Programação</a></li>
+        <li><a href="#contato" class="hover:text-ufc-green transition text-sm nav-link mobile-nav-link">Contato</a></li>
       </ul>
     </div>
   </header>
@@ -404,33 +404,33 @@
         <label for="search-programacao" class="sr-only">Buscar apresentação por título ou autor</glabel>
         <div class="relative">
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+            <svg class="w-5 h-5 text-ufc-green/70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
           </div>
-          <input id="search-programacao" name="search" class="block w-full bg-ufc-mediumblue/60 border border-ufc-green/30 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-ufc-green focus:border-ufc-green" placeholder="Buscar por título ou autor..." type="search">
+          <input id="search-programacao" name="search" class="block w-full bg-ufc-mediumblue/60 border border-ufc-green/30 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-ufc-green focus:border-ufc-green" placeholder="Buscar por título, autor ou sessão..." type="search">
         </div>
       </div>
       <!-- Abas de Navegação por Dia -->
-      <div class="mb-8 flex justify-center border-b border-ufc-green/20">
-        <button data-tab="dia-10" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-ufc-green text-ufc-green">10/11</button>
-        <button data-tab="dia-11" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-transparent text-white/70 hover:text-white">11/11</button>
-        <button data-tab="dia-12" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-transparent text-white/70 hover:text-white">12/11</button>
+      <div class="mb-8 flex justify-center border-b border-ufc-green/20" role="tablist" aria-label="Programação por dia">
+        <button id="tab-dia-10" role="tab" aria-controls="panel-dia-10" aria-selected="true" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-ufc-green text-ufc-green">10/11</button>
+        <button id="tab-dia-11" role="tab" aria-controls="panel-dia-11" aria-selected="false" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-transparent text-white/70 hover:text-white" tabindex="-1">11/11</button>
+        <button id="tab-dia-12" role="tab" aria-controls="panel-dia-12" aria-selected="false" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-transparent text-white/70 hover:text-white" tabindex="-1">12/11</button>
       </div>
 
       <!-- Conteúdo das Abas -->
       <div id="programacao-content">
         <!-- Dia 10 -->
-        <div id="dia-10" class="tab-content space-y-8">
+        <div id="panel-dia-10" role="tabpanel" aria-labelledby="tab-dia-10" class="tab-content space-y-8">
           <!-- O conteúdo será inserido aqui pelo JavaScript -->
         </div>
         <!-- Dia 11 -->
-        <div id="dia-11" class="tab-content space-y-8 hidden">
+        <div id="panel-dia-11" role="tabpanel" aria-labelledby="tab-dia-11" class="tab-content space-y-8 hidden" tabindex="0">
           <!-- O conteúdo será inserido aqui pelo JavaScript -->
         </div>
         <!-- Dia 12 -->
-        <div id="dia-12" class="tab-content space-y-8 hidden">
+        <div id="panel-dia-12" role="tabpanel" aria-labelledby="tab-dia-12" class="tab-content space-y-8 hidden" tabindex="0">
           <!-- O conteúdo será inserido aqui pelo JavaScript -->
         </div>
-        <div id="no-results" class="hidden text-center text-white/80 py-8">
+        <div id="no-results" class="hidden text-center text-white/80 py-8" aria-live="polite">
           <p>Nenhuma apresentação encontrada para o termo buscado.</p>
         </div>
       </div>
@@ -606,6 +606,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top-btn" aria-label="Voltar ao topo" class="hidden fixed bottom-5 right-5 bg-ufc-green text-ufc-darkblue p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-opacity duration-300">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+    </svg>
+  </button>
 
   <!-- Scripts -->
   <script src="script/main.js" defer></script>

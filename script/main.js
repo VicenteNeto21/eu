@@ -1,6 +1,19 @@
 // Mobile Menu Toggle
-document.getElementById('mobile-menu-button').addEventListener('click', () => {
-  document.getElementById('mobile-menu').classList.toggle('hidden');
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+mobileMenuButton.addEventListener('click', () => {
+  const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+  mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+  mobileMenu.classList.toggle('hidden');
+});
+
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+  });
 });
 
 // Countdown Timer
@@ -44,17 +57,23 @@ function setupTabs() {
 
   tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-      const tabId = button.dataset.tab;
+      const panelId = button.getAttribute('aria-controls');
 
       tabButtons.forEach(btn => {
         btn.classList.remove('border-ufc-green', 'text-ufc-green');
         btn.classList.add('border-transparent', 'text-white/70', 'hover:text-white');
+        btn.setAttribute('aria-selected', 'false');
+        btn.setAttribute('tabindex', '-1');
       });
+
       button.classList.add('border-ufc-green', 'text-ufc-green');
       button.classList.remove('border-transparent', 'text-white/70', 'hover:text-white');
+      button.setAttribute('aria-selected', 'true');
+      button.setAttribute('tabindex', '0');
 
       tabContents.forEach(content => {
-        content.id === tabId ? content.classList.remove('hidden') : content.classList.add('hidden');
+        const isSelected = content.id === panelId;
+        content.classList.toggle('hidden', !isSelected);
       });
     });
   });
@@ -106,15 +125,41 @@ async function loadProgramacao() {
     });
 
     sessoes.forEach(sessao => {
-      const container = document.getElementById(`dia-${sessao.day}`);
+      const container = document.getElementById(`panel-dia-${sessao.day}`);
       if (!container) return;
 
-      const presentationsHTML = sessao.presentations.map(p =>
-        `<li>
-          <p class="font-medium text-white/95">${p.title}</p>
+      // --- Lógica para calcular horário de início das apresentações ---
+      const timeRegex = /(\d{2}:\d{2})/;
+      const match = sessao.dateTime.match(timeRegex);
+      let currentTime = null;
+
+      if (match) {
+        const [startHour, startMinute] = match[1].split(':').map(Number);
+        currentTime = new Date();
+        currentTime.setHours(startHour, startMinute, 0, 0);
+      }
+
+      const presentationDuration = {
+        'Apresentação Oral': 15, // minutos
+        'Pitch': 10, // minutos
+      };
+      const durationInMinutes = presentationDuration[sessao.type];
+      // --- Fim da lógica de horário ---
+
+      const presentationsHTML = sessao.presentations.map(p => {
+        let timeHTML = '';
+        if (currentTime && durationInMinutes) {
+          const hours = currentTime.getHours().toString().padStart(2, '0');
+          const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+          timeHTML = `<span class="text-xs text-ufc-green font-mono mr-2">[${hours}:${minutes}]</span>`;
+          currentTime.setMinutes(currentTime.getMinutes() + durationInMinutes);
+        }
+
+        return `<li>
+          <p class="font-medium text-white/95">${timeHTML}${p.title}</p>
           ${p.author ? `<p class="text-sm text-white/70 pt-1 pl-4">- ${p.author}</p>` : ''}
-        </li>`
-      ).join('');
+        </li>`;
+      }).join('');
 
       const durationHTML = sessao.duration ? `| Duração: ${sessao.duration}` : '';
 
@@ -211,12 +256,34 @@ async function loadCronograma() {
   }
 }
 
+// Back to Top Button
+function setupBackToTopButton() {
+  const backToTopButton = document.getElementById('back-to-top-btn');
+  if (!backToTopButton) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) { // Mostra o botão após rolar 300px
+      backToTopButton.classList.remove('hidden');
+    } else {
+      backToTopButton.classList.add('hidden');
+    }
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateCountdown, 1000);
   updateCountdown();
   setActiveNavLink();
   window.addEventListener('hashchange', setActiveNavLink);
   setupTabs();
+  setupBackToTopButton();
   loadProgramacao();
   loadCronograma();
 });
