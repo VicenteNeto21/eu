@@ -1,0 +1,407 @@
+[
+  {
+    "day": 10,
+    "area": "Computação e Tecnologia da Informação",
+    "type": "Pitch",
+    "sessionTitle": "Sessão 04",
+    "dateTime": "10/11/2025 das 08:30 às 10:00",
+    "duration": "01h30min",
+    "presentations": [
+      { "title": "AUTOMAÇÃO E MINERAÇÃO DE DADOS APLICADAS AO ACOMPANHAMENTO DA RETENÇÃO NO CURSO DE CIÊNCIA DA COMPUTAÇÃO DA UFC CAMPUS DE CRATEÚS", "author": "Igor Santana Sampaio" },
+      { "title": "DESENVOLVIMENTO DE UM PORTAL WEB PARA DIVULGAÇÃO E DOCUMENTAÇÃO DO ENGINE LAB", "author": "Lúcio Cauper Freitas de França" },
+      { "title": "EMPREENDENDO NA SAÚDE PÚBLICA E PRIVADA: UMA BUSCA POR OTIMIZAÇÃO NO AGENDAMENTO DE CONSULTAS", "author": "Levi Gabriel Araújo Rodrigues" },
+      { "title": "PROPOSTA DE USO DE MODELOS AMPLO DE LINGUAGEM ABERTOS PARA PREVISÃO DE DEMANDA NO RESTAURANTE UNIVERSITÁRIO", "author": "Lucas Moreira Gomes" },
+      { "title": "PULSE ENERGY: UM SISTEMA IOT DE MONITORAMENTO DE CONSUMO ENERGÉTICO.", "author": "Pablo Kauan Martins Timbó" },
+      { "title": "UMA PROPOSTA DE CURSO DE INTRODUÇÃO AO DESIGN PARA ALUNOS DE TI DO CAMPUS DA UFC EM CRATEÚS", "author": "Lúcio Cauper Freitas de França" }
+    ]
+  },
+  {
+    "day": 10,
+    "area": "Ciências Exatas, Engenharias e suas Aplicações",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 01",
+    "dateTime": "10/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "MINICURSO DE REVIT: UMA NOVA FORMA DE MODELAR E CONSTRUIR", "author": "José Fabrício do Nascimento Andrade" },
+      { "title": "AÇÕES DA LIGA ACADÊMICA DE ROCHAS E MINERAIS INDUSTRIAIS NA DIVULGAÇÃO CIENTÍFICA E PROMOÇÃO DA PERMANÊNCIA ESTUDANTIL", "author": "Jose Sales Rodrigues" },
+      { "title": "AVALIAÇÃO DO PROCESSO DE LICENCIAMENTO AMBIENTAL DA BARRAGEM DE FRONTEIRAS, EM CRATEÚS-CE, QUANTO À PARTICIPAÇÃO COMUNITÁRIA.", "author": "Maria Inaiara Alves Martins" },
+      { "title": "COMPUTAÇÃO E TI NO ENSINO SUPERIOR: ESTRATÉGIAS DE NIVELAMENTO PARA ESTUDANTES SURDOS", "author": "Alison Pereira Silva" },
+      { "title": "DA SALA DE AULA AO LABORATÓRIO: PRÁTICAS INVESTIGATIVAS EM QUÍMICA FORENSE APLICADAS À QUALIDADE DA ÁGUA NOS SERTÕES DE CRATEÚS", "author": "Francisco Emerson Ferreira de Macedo" },
+      { "title": "ESTUDO DA UTILIZAÇÃO DE REJEITO DE MINÉRIO DE FERRO NA MODIFICAÇÃO DE LIGANTES ASFÁLTICOS", "author": "Antonio Guilherme da Silva Umbelino" },
+      { "title": "ESTUDO DAS PROPRIEDADES QUÍMICAS E MECÂNICAS DE ARGAMASSA E CONCRETO FEITOS COM ÁGUA CINZA.", "author": "Kailany Moreira da Silva" },
+      { "title": "MINICURSO DE POWER BI: TRANSFORMANDO DADOS EM DECISÕES", "author": "Alison Dantas de Moura" },
+      { "title": "PROHABITA: ENGENHARIA CIVIL DA UFC CRATEÚS COMO INSTRUMENTO DE INCLUSÃO E MORADIA DIGNA", "author": "Francisco Gildezio Sousa Albuquerque" },
+      { "title": "SISTEMA DE AUXÍLIO AO DIAGNÓSTICO DOMICILIAR DE ESCOLIOSE POR MEIO DE VISÃO COMPUTACIONAL", "author": "Alison Dantas de Moura" }
+    ]
+  },
+  {
+    "day": 10,
+    "area": "Meio Ambiente e Sustentabilidade",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 02",
+    "dateTime": "10/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "A UNIVERSIDADE FRENTE À GESTÃO DE CONFLITOS SOCIOAMBIENTAIS: O GEPIA, UFC/ CRATEÚS E O CASO DA BARRAGEM DE FRONTEIRAS", "author": "Bruno Nobre de Sousa" },
+      { "title": "ALÉM DAS FRONTEIRAS: REGISTROS AUDIOVISUAIS DE COMUNIDADES DESLOCADAS INVOLUNTARIAMENTE", "author": "Taynara Marques Martins" },
+      { "title": "ANÁLISE DA INTEGRAÇÃO DE SABERES POPULARES E TÉCNICOS NA REPRESENTAÇÃO TERRITORIAL DE COMUNIDADE ATINGIDA PELA BARRAGEM DE FRONTEIRAS", "author": "Antonia Francisca Nayara Alves da Costa" },
+      { "title": "EDUCAÇÃO AMBIENTAL CRÍTICA E MOBILIZAÇÃO POPULAR EM DEFESA DO TERRITÓRIO: GRUPO DE ESTUDOS E PRÁTICAS INTERDISCIPLINARES EM AGROECOLOGIA (GEPIA) E OS PRINCÍPIOS E AS DIRETRIZES DA PNEA", "author": "Thais Diniz Barros" },
+      { "title": "EVIDÊNCIAS RECENTES DE IMPACTOS AMBIENTAIS E À SAÚDE HUMANA ASSOCIADOS À POLUIÇÃO POR MICROPLÁSTICOS", "author": "Lariza Costa Fernandes" },
+      { "title": "FRONTEIRAS EM EXPOSIÇÃO: CULTURA E A VISIBILIZAÇÃO DE NARRATIVAS DE ATINGIDOS POR BARRAGENS", "author": "Antonio Everton Carneiro Fernandes" },
+      { "title": "PADRONIZAÇÃO E SEGURANÇA NO MANEJO DE RESÍDUOS QUÍMICOS: DESENVOLVIMENTO DE MANUAL APLICADO AO LABORATÓRIO DE QUÍMICA DA UFC CAMPUS CRATEÚS", "author": "Pedro Vitor Fernandes Martins" },
+      { "title": "RECICLA NOVO ORIENTE: COLETANDO MUDANÇAS, GERANDO FUTURO", "author": "Francisco Luanderson da Silva" },
+      { "title": "RESÍDUOS LABORATORIAIS: UM PLANO DE REVALIDAÇÃO DE REAGENTES QUÍMICOS NO LABORATÓRIO DE QUÍMICA UFC CRATEÚS", "author": "Ana Letícia Vieira Silva" }
+    ]
+  },
+  {
+    "day": 10,
+    "area": "Computação e Tecnologia da Informação",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 03",
+    "dateTime": "10/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "A IMPORTÂNCIA DA PROGRAMAÇÃO EM PYTHON NA ÁREA DE ENGENHARIA E O SEU POTENCIAL NÃO EXPLORADO", "author": "Isaac Ferreira Melo" },
+      { "title": "A INFLUÊNCIA DAS MÍDIAS DIGITAIS NA PROMOÇÃO DO EMPREENDEDORISMO UNIVERSITÁRIO", "author": "Rykelme da Silva Gonçalves" },
+      { "title": "BEEHY EM CAMPO: DESAFIOS DE IMPLANTAÇÃO DE UM SISTEMA DE COLMEIAS INTELIGENTES NOS SERTÕES DE CRATEÚS", "author": "Rykelme da Silva Gonçalves" },
+      { "title": "BEEHY EM CAMPO: DESAFIOS DE IMPLANTAÇÃO DE UM SISTEMA DE COLMEIAS INTELIGENTES NOS SERTÕES DE CRATEÚS.", "author": "Francisca Vitória Gomes de Sousa" },
+      { "title": "DESAFIOS NO APRENDIZADO DE PYTHON E ENGENHARIA DE DADOS: EXPERIÊNCIA EM CURSO DE TECNOLOGIA DA INFORMAÇÃO DA UFC-CRATEÚS: UM RELATO DE EXPERIÊNCIA", "author": "Kalil Pires Lima" },
+      { "title": "LLM4TIME: PROPOSTA DE BIBLIOTECA OPEN-SOURCE PARA PREVISÃO DE SÉRIES TEMPORAIS COM MODELOS DE LINGUAGEM DE GRANDE ESCALA", "author": "Wesley Barbosa Silva" },
+      { "title": "MONITORIA DE INICIAÇÃO À DOCÊNCIA EM CIRCUITOS DIGITAIS: UM RELATO DE EXPERIÊNCIA EM 2025", "author": "Lucas Gabriel Marques Barroso" },
+      { "title": "MONITORIA EM FUNDAMENTOS DE PROGRAMAÇÃO: DESAFIOS NO DESENVOLVIMENTO DA AUTONOMIA DISCENTE", "author": "Lucas Moreira Gomes" },
+      { "title": "SISTEMA DE ANÚNCIOS ANUNCIAUFC: UMA PLATAFORMA SEGURA E ACESSÍVEL PARA INTEGRAÇÃO COMUNITÁRIA NO ÂMBITO UNIVERSITÁRIO", "author": "Stephany Rodrigues Gonçalves" }
+    ]
+  },
+  {
+    "day": 10,
+    "area": "Ciências Exatas, Engenharias e suas Aplicações.",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 05",
+    "dateTime": "10/11/2025 das 14:00 às 17:00",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "A MONITORIA ACADÊMICA COMO FERRAMENTA DE NIVELAMENTO DO CONHECIMENTO E COMBATE A EVASÃO ESCOLAR", "author": "Rômulo Matheus de Araújo Saturnino" },
+      { "title": "ANÁLISE BIBLIOMÉTRICA DA PRODUÇÃO CIENTÍFICA SOBRE A CALCINAÇÃO DE MINÉRIOS FOSFÁTICOS", "author": "Maria Raylia da Costa Pinto" },
+      { "title": "CONTROLE FÍSICO-FINANCEIRO EM PEQUENAS CONSTRUÇÕES: ESTUDO DE CASO EM CRATEÚS", "author": "Leonardo Mota Oliveira" },
+      { "title": "EFEITO SINÉRGICO DA ADIÇÃO DE CIMENTO PORTLAND E DE DIFERENTES SOLUÇÕES ALCALINAS EM PASTAS DE CINZA VOLANTE ÁLCALI-ATIVADA", "author": "Arthur Breno Saraiva Cidade" },
+      { "title": "EXPLORANDO FUNÇÕES: FORTALECENDO A BASE PARA O CÁLCULO", "author": "Francisco William de Sousa Peres" },
+      { "title": "MATURIDADE BIM NO ENSINO DE GRADUAÇÃO: UM ESTUDO DE CASO NO CURSO DE ENGENHARIA CIVIL DA UNIVERSIDADE FEDERAL DO CEARÁ CAMPUS CRATEÚS", "author": "Arão Nascimento Gomes" },
+      { "title": "PASTAS ÁLCALI-ATIVADAS À BASE DE CINZAS DE BIOMASSA", "author": "Arão Nascimento Gomes" },
+      { "title": "PROGNÓSTICO DA PEGADA HÍDRICA NA CONSTRUÇÃO DE EDIFÍCIOS: SUPERANDO OS DESAFIOS DO USO RACIONAL DA ÁGUA PARA O DESENVOLVIMENTO SUSTENTÁVEL", "author": "Francisco Floriano Oliveira Bezerra" },
+      { "title": "STEELCALC: COMPARATIVO AOS MÉTODOS DE DIMENSIONAMENTO À FLEXÃO DAS VERSÕES DA NBR 8800:2008 E DA NBR 8800:2024.", "author": "João Manuel Cassiano Farias" }
+    ]
+  },
+  {
+    "day": 10,
+    "area": "Práticas e Políticas Educacionais",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 06",
+    "dateTime": "10/11/2025 das 14:00 às 17:00",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "ANÁLISE DA RETENÇÃO DOS ALUNOS NOS CURSOS DA UFC/CRATEÚS - UMA SÉRIE HISTÓRICA", "author": "Guilherme Oliveira Rodrigues" },
+      { "title": "AUTOMATIZAÇÃO DAS FERRAMENTAS DE MONITORAMENTO DO DESEMPENHO ACADÊMICO DOS ALUNOS DOS CURSO DE GRADUAÇÃO DA UFC CAMPUS DE CRATEÚS", "author": "Iara Rodrigues de Farias" },
+      { "title": "FLUXOGRAMA DE PLANEJAMENTO E OFERTA DE DISCIPLINAS NA UFC - CAMPUS CRATEÚS: DO LEVANTAMENTO DE DEMANDA À MATRÍCULA.", "author": "Thalison Rodrigues Ferreira" },
+      { "title": "HABILIDADES E COMPETÊNCIAS DESENVOLVIDAS EM ESTUDANTES DO ENSINO SUPERIOR COM A APLICAÇÃO DA CARTOGRAFIA SOCIAL EM COMUNIDADES ATINGIDAS POR BARRAGEM", "author": "Tifanny de Sousa Souto" },
+      { "title": "IMPORTÂNCIA DA MONITORIA DE EMPREENDEDORISMO PARA O DESEMPENHO DOS ALUNOS", "author": "Débora Brandão Gomes" },
+      { "title": "OFICINAS: CIDADANIA JOVEM NA ESCOLA – EDUCAÇÃO, LIDERANÇA E VOLUNTARIADO NA PRÁTICA", "author": "Lorrane de Sousa Vale" },
+      { "title": "RETENÇÃO EM COMPONENTES CURRICULARES DOS SEMESTRES FINAIS NOS CURSOS DE GRADUAÇÃO DA UFC – CAMPUS DE CRATEÚS", "author": "Francisco Rubens Dutra Lima" },
+      { "title": "SINTONIZE UFC: QUANDO O CONHECIMENTO DA UNIVERSIDADE VIRA PODCAST", "author": "Eva Maria Vicente Barbosa" },
+      { "title": "VULNERABILIDADE SOCIOECONÔMICA E SEUS IMPACTOS NA PERMANÊNCIA ESTUDANTIL: UM ESTUDO SOBRE A EVASÃO UNIVERSITÁRIA NO CAMPUS DA UFC EM CRATEÚS", "author": "Lívia Kelly Gomes Maia" }
+    ]
+  },
+  {
+    "day": 10,
+    "area": "Computação e Tecnologia da Informação.",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 07",
+    "dateTime": "10/11/2025 das 14:00 às 17:00",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "ANÁLISE COMPARATIVA DE FILAMENTOS PARA IMPRESSÃO 3D: PROPRIEDADES, APLICAÇÕES E SUSTENTABILIDADE", "author": "Kauã Abreu Gomes" },
+      { "title": "CULTURA EMPREENDEDORA UNIVERSITÁRIA: AVALIAÇÃO QUALI-QUANTITATIVA DAS INICIATIVAS DO STARTUFC", "author": "Raniel Batista Sousa" },
+      { "title": "DESENVOLVIMENTO DE JOGOS EDUCACIONAIS COMO FERRAMENTA DE APOIO AO ENSINO DE SISTEMAS OPERACIONAIS: UMA ABORDAGEM PRÁTICA SOBRE ESCALONAMENTO DE PROCESSOS", "author": "Francisco Rian Ribeiro Medeiro" },
+      { "title": "EMPREENDEDORISMO SOCIAL E ESTRATÉGIAS DE INCLUSÃO JUVENIL PARA CRATEÚS", "author": "Luis Felipe Domingos Vieira Torres" },
+      { "title": "GERMINAR JÚNIOR: PRÁTICAS DE EMPREENDEDORISMO EM TURMAS DA EEEP MANOEL MANO", "author": "Welington Paulo de Sousa" },
+      { "title": "MAPEAMENTO DE STARTUPS NO SERTÃO DE CRATEÚS - UM RETRATO DE 2025", "author": "Maria Fernanda Vasconcelos Nunes" },
+      { "title": "OTIMIZAÇÃO DE PARÂMETROS NA IMPRESSÃO 3D: EFEITOS NA RESISTÊNCIA MECÂNICA E EFICIÊNCIA DE PRODUÇÃO", "author": "Antonio Edson de Oliveira Gomes Junior" },
+      { "title": "PROJETO GERMINAR: EXTENSÃO UNIVERSITÁRIA E FORTALECIMENTO DO ECOSSISTEMA DE STARTUPS EM CRATEÚS", "author": "Thiago Sales Macêdo" },
+      { "title": "VIGORGRAPH: INOVAÇÃO EM ANÁLISE DE VIGOR DE SEMENTES POR VISÃO COMPUTACIONAL", "author": "Lívia Kelly Gomes Maia" }
+    ]
+  },
+  {
+    "day": 10,
+    "area": "Métodos Alternativos de Ensino",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 08",
+    "dateTime": "10/11/2025 das 14:00 às 17:00",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "AVALIAÇÃO DIAGNÓSTICA COMO SUBSÍDIO À ORGANIZAÇÃO DE UMA CÉLULA DE ESTUDOS DE INGLÊS", "author": "Antnia Franciane Ferreira Ximenes" },
+      { "title": "DIFICULDADES DA INTERAÇÃO HUMANO-COMPUTADOR NA EDUCAÇÃO: UMA REVISÃO BIBLIOGRÁFICA", "author": "Maria Eduarda Bezerra de Sousa" },
+      { "title": "ENGLISHPET: INTEGRANDO A COMUNIDADE ACADÊMICA ATRAVÉS DA COMUNICAÇÃO NA LÍNGUA INGLESA.", "author": "Maria Julia de Souza Negreiros" },
+      { "title": "ENSINAR PARA APRENDER: A IMPORTÂNCIA DA MONITORIA NA FORMAÇÃO PEDAGÓGICA E CAMINHO PARA A PÓS-GRADUAÇÃO", "author": "Lara Fábia Marques de Carvalho" },
+      { "title": "EXPERIÊNCIA DE MONITORIA EM MATEMÁTICA BÁSICA PARA CURSOS DE TI DA UFC CRATEÚS", "author": "Jadiel Silva da Cunha" },
+      { "title": "IMPRESSÃO 3D COMO RECURSO DIDÁTICO E ESTRUTURAL PARA O PROCESSO DE ENSINO-APRENDIZAGEM NA UFC – CAMPUS DE CRATEÚS", "author": "Bruna Laissa Laurindo Soares Reinaldo" },
+      { "title": "LUZ, CÂMERA, EXTENSÃO: DEMOCRATIZANDO O ACESSO AO AUDIOVISUAL", "author": "Anna Iwiny Alves Andrade" },
+      { "title": "PROGRAMA DE INICIAÇÃO ACADÊMICA E ESTRATÉGIAS DE ENSINO INCLUSIVAS PARA ESTRUTURA DE DADOS AVANÇADA: UM CAMINHO DE NIVELAMENTO PARA ESTUDANTES EM FORMAÇÃO", "author": "Nádila da Silva Soares" }
+    ]
+  },
+  {
+    "day": 11,
+    "area": "Práticas e Políticas Educacionais",
+    "type": "Pitch",
+    "sessionTitle": "Sessão 12",
+    "dateTime": "11/11/2025 das 08:30 às 10:30",
+    "duration": "02 horas",
+    "presentations": [
+      { "title": "ANÁLISE DA TUTORIA ACADÊMICA NO PROCESSO DE ADAPTAÇÃO DE CALOUROS NO CAMPUS DE CRATEÚS DA UNIVERSIDADE FEDERAL DO CEARÁ", "author": "Marlon Melo Moura" },
+      { "title": "ANÁLISE DIAGNÓSTICA DE CONHECIMENTOS BÁSICOS DOS DISCENTES RECÉM-INGRESSOS DO CAMPUS DA UNIVERSIDADE FEDERAL DO CEARÁ EM CRATEÚS", "author": "João Henrique Machado Ribeiro Sales" },
+      { "title": "AVALIAÇÃO DO PROJETO ACOLHIDA CRATEÚS QUANTO AO APOIO NA DECISÃO VOCACIONAL DE JOVENS ESTUDANTES DA REGIÃO DE CRATEÚS", "author": "Wildney Kesney Rodrigues de Sousa" },
+      { "title": "DESENHANDO COM A LUZ: A FOTOGRAFIA MOBILE COMO REGISTRO DA SUBJETIVIDADE NO ESPAÇO UNIVERSITÁRIO", "author": "Allan Cristtian Soares Fialho" },
+      { "title": "ESTRATÉGIAS DE MONITORIA NA DISCIPLINA DE LÓGICA PARA COMPUTAÇÃO", "author": "Giovanna Maria Verissimo Xavier" },
+      { "title": "MAPEAMENTO CULTURAL COMO ESTRATÉGIA DE FORTALECIMENTO DA CULTURA UNIVERSITÁRIA: O PROJETO AGENTES DA CULTURA NO CAMPUS UFC CRATEÚS", "author": "Maria Luisa Gomes Bento" },
+      { "title": "PROCRASTINAÇÃO ACADÊMICA: QUANDO A RAZÃO VIRA CÚMPLICE DO PRÓPRIO FRACASSO", "author": "Luiz Gusttavo Macedo Magalhães" },
+      { "title": "RELEVÂNCIA DO PROJETO ACOLHIDA CRATEÚS PARA ESCOLHA PROFISSIONAL", "author": "Mikaele Oliveira Catunda Farias" }
+    ]
+  },
+  {
+    "day": 11,
+    "area": "Meio Ambiente e Sustentabilidade.",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 11",
+    "dateTime": "11/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "APARELHOS TERAPÊUTICOS COM MATERIAIS RECICLÁVEIS", "author": "Antonia Alzira Rodrigues de Souza" },
+      { "title": "AVALIAÇÃO DOS IMPACTOS CULTURAIS EM COMUNIDADES ATINGIDAS POR BARRAGENS HÍDRICAS: O CASO DA BARRAGEM DE FRONTEIRAS, CRATEÚS-CE", "author": "Germano Martins Ribeiro" },
+      { "title": "COMPOSIÇÃO DA COMUNIDADE FITOPLANCTÔNICA NO RESERVATÓRIO JABURU II, INDEPENDÊNCIA-CE.", "author": "Jeferson Rodrigues da Silva" },
+      { "title": "ESTABELECIMENTO DE CULTIVO DA DAPHNIA MAGNA NO LABORATÓRIO DE ECOTOXICOLOGIA E MONITORAMENTO DA QUALIDADE AMBIENTAL (LEMAQ)", "author": "Bianca Braz e Silva Farinon" },
+      { "title": "FATORES INTERVENIENTES NA VIDA ÚTIL DAS CISTERNAS DE PLACA NO SEMIÁRIDO CEARENSE", "author": "Antônia Izabel Bento da Silva" },
+      { "title": "IMPACTOS SOCIAIS E DESAFIOS DO REASSENTAMENTO DA COMUNIDADE DE ASSIS EM FUNÇÃO DA BARRAGEM DE FRONTEIRAS, CRATEÚS-CE", "author": "Paulo Sérgio Andrade de Albuquerque" },
+      { "title": "TESTES DE EVITAMENTO COMO FERRAMENTA PARA A DETECÇÃO DE IMPACTOS AMBIENTAIS EM SOLOS CONTAMINADOS PELA DISPOSIÇÃO INADEQUADA DE RESÍDUOS SÓLIDOS", "author": "Lazaro Gabriel dos Santos Ramos" },
+      { "title": "TOXICIDADE DE EXTRATOS DE SOLOS CONTAMINADOS POR LIXÕES UTILIZANDO COMO BIOINDICADOR A D.MAGNA.", "author": "Maria Claudiane Martins do Nascimento" },
+      { "title": "TRATAMENTO DE RESÍDUOS LABORATORIAIS POR LEITO DE SECAGEM ADAPTADO: AVALIAÇÃO DA EFICIÊNCIA E APLICABILIDADE", "author": "Francisco Luanderson da Silva" }
+    ]
+  },
+  {
+    "day": 11,
+    "area": "Computação e Tecnologia da Informação..",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 10",
+    "dateTime": "11/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "AUTOMATIZAÇÃO DO TESTE DE ACEITABILIDADE DAS REFEIÇÕES SERVIDAS NO RESTAURANTE UNIVERSITÁRIO DA UFC - CAMPUS DE CRATEÚS", "author": "Gabriel Silva Nascimento" },
+      { "title": "BENEVIA: TECNOLOGIA ALIADA DA SOCIEDADE", "author": "Gianlucca das Chagas Leoncio" },
+      { "title": "DESENVOLVIMENTO DE UMA PLATAFORMA WEB PARA GESTÃO DE EVENTOS E COMUNICAÇÃO DO STARTUFC", "author": "Thiago Soares Vasconcelos" },
+      { "title": "IA GENERATIVA COMO FERRAMENTA DE INOVAÇÃO NOS NEGÓCIOS: ANÁLISE DE BENEFÍCIOS E LIMITAÇÕES", "author": "Thiago Martins de Paiva" },
+      { "title": "MONITORIA DE ESTRUTURA DE DADOS AVANÇADA: UM RELATO DE EXPERIÊNCIA", "author": "Gabriela Silva Ximenes" },
+      { "title": "MOTIVAÇÕES E OBSTÁCULOS NO EMPREENDEDORISMO FEMININO: UM ESTUDO COM EMPREENDEDORAS DE CRATEÚS-CE", "author": "Maria Clara Paiva Araújo" },
+      { "title": "OLIMPÍADA BRASILEIRA DE INFORMÁTICA (OBI) 2025: PREPARAÇÃO DE ALUNOS DE ENSINO MÉDIO E GRADUAÇÃO", "author": "Wagner Vasconcelos Dias" },
+      { "title": "OPORTUNIDADES DE NEGÓCIOS COM JOGOS DIGITAIS EM REGIÕES INTERIORANAS: UM ESTUDO DE CASO SOBRE O ECOSSISTEMA NO CEARÁ", "author": "Welvis de Freitas Santos" },
+      { "title": "PREDIÇÃO DE SEXO POR ANÁLISE 3D DE SEIOS PARANASAIS COM TÉCNICAS DE MACHINE LEARNING E DEEP LEARNING", "author": "Maria Fernanda Aquino Freitas Scarcela" }
+    ]
+  },
+  {
+    "day": 11,
+    "area": "Ciências Exatas, Engenharias e suas Aplicações..",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 09",
+    "dateTime": "11/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "A MONITORIA COMO FERRAMENTA DE CONSOLIDAÇÃO ENTRE TEORIA E PRÁTICA NA GEOTECNIA", "author": "Olavo Anderson Almeida Fernandes" },
+      { "title": "AGROTECHS E INCLUSÃO TECNOLÓGICA: LEVANTAMENTO DAS NECESSIDADES DE PEQUENOS PRODUTORES EM CRATEÚS-CE", "author": "Andresa Rodrigues Alves" },
+      { "title": "ANÁLISE DA CAPACIDADE PREDITIVA DAS VAZÕES AFLUENTES AO RESERVATÓRIO FRONTEIRAS A PARTIR DA VARIABILIDADE DA TEMPERATURA DA SUPERFÍCIE DO MAR", "author": "Francisco Mateus Bezerra Martins" },
+      { "title": "AVALIAÇÃO DE PROPRIEDADES NO ESTADO FRESCO E ENDURECIDO DE CIMENTOS ÁLCALI-ATIVADOS OBTIDOS A PARTIR DA COMBINAÇÃO DE ESCÓRIA BOF E RESÍDUO DE CERÂMICA VERMELHA", "author": "Nayra Rocha de Sousa" },
+      { "title": "AVALIAÇÃO DO IMPACTO AMBIENTAL E DAS CARACTERÍSTICAS MICROESTRUTURAIS DO CONCRETO ÁLCALI-ATIVADO À BASE DE CINZA VOLANTE E ADIÇÃO DE CIMENTO PORTLAND", "author": "Antonio Lucas Braga Moreira" },
+      { "title": "DISTÂNCIA DE INFLUÊNCIA DA OXIDAÇÃO CAUSADA POR MARESIA EM PERFIS DE AÇO ESTRUTURAL", "author": "Rômulo Matheus de Araújo Saturnino" },
+      { "title": "EDUCRAT: SIMPLIFICANDO A COMUNICAÇÃO ENTRE ESCOLAS E RESPONSÁVEIS", "author": "Thaís Maria Marques Venâncio" },
+      { "title": "GERENCIAMENTO DE PROCESSOS INTERNOS NO STARTUFC: ESTRATÉGIAS PARA OTIMIZAR PROJETOS E PESSOAS", "author": "Frankecion Bernardino Mesquita" },
+      { "title": "MARKETING DIGITAL COMO ESTRATÉGIA DE FORTALECIMENTO DO STARTUFC", "author": "Jenifer Victoria de Souza Oliveira" }
+    ]
+  },
+  {
+    "day": 11,
+    "area": "Ciências Exatas, Engenharias e suas Aplicações...",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 13",
+    "dateTime": "11/11/2025 das 14:00 às 17:00",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "A TECNOLOGIA COMO ALIADA DA COMUNICAÇÃO ACADÊMICA: BASTIDORES DA EDIÇÃO À INOVAÇÃO DIGITAL", "author": "Ronie de Souza Almeida" },
+      { "title": "A UTILIZAÇÃO DE MODELOS DIGITAIS TRIDIMENSIONAIS NO ENSINO DE LAVRA DE MINA SUBTERRÂNEA", "author": "Nícolas Oliveira Monteiro" },
+      { "title": "DOMINANDO A CALCULADORA CIENTÍFICA: DA TEORIA À PRÁTICA NO AMBIENTE ACADÊMICO", "author": "Caio Tibérius de Sena Mourão" },
+      { "title": "FATORES INTERVENIENTES NAS FLORAÇÕES DE CIANOBACTÉRIAS NOS RESERVATÓRIOS DO SEMIÁRIDO NO TRÓPICO CEARENSE, BRASIL", "author": "Maria Gisele Rodrigues Rosa" },
+      { "title": "MANUAL DIDÁTICO DE ANÁLISES DA QUALIDADE DA ÁGUA - VERSÃO 2.0: O USO DE VÍDEOS PARA SUBSIDIAR MELHORIA DO APRENDIZADO NO ENSINO SUPERIOR E A INCLUSÃO.", "author": "Edy Vincius Barros Sales" },
+      { "title": "PROJETO MINA ESCOLA: SEGURANÇA, EFICIÊNCIA E SUSTENTABILIDADE NOS GARIMPOS DE OPALA DE PEDRO II", "author": "João Miguel Tavares de Aquino" },
+      { "title": "SOLUCIONE", "author": "Lívia Kelly Gomes Maia" },
+      { "title": "USO DE SMARTPHONE NA QUANTIFICAÇÃO DE FERRO SOLÚVEL EM AMOSTRAS DE ÁGUA POR ANÁLISE COLORIMÉTRICA", "author": "Antonio Janderson de Sousa Lima" },
+      { "title": "WELLBEING: UM ESTUDO EM OBRAS DE PEQUENO PORTE NO SERTÃO DE CRATEÚS, CE", "author": "Davylla Lourrane Freire de Oliveira" }
+    ]
+  },
+  {
+    "day": 11,
+    "area": "Computação e Tecnologia da Informação...",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 14",
+    "dateTime": "11/11/2025 das 14:00 às 17:00",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "ANÁLISE DE DADOS EXTRAÍDOS DE TOMOGRAFIAS COMPUTADORIZADAS PARA IDENTIFICAÇÃO DO SEXO BIOLÓGICO EM ODONTOLOGIA FORENSE", "author": "Gisele Gomes Costa" },
+      { "title": "ANÁLISE DO USO DE SERVIÇOS MÉDICOS POR IDOSOS UTILIZANDO TÉCNICAS DE MACHINE LEARNING", "author": "Pedro Kauan Silveira Silva" },
+      { "title": "GRUPO DE ESTUDOS EM POO: UMA AÇÃO DE APOIO ACADÊMICO", "author": "Marlon Melo Moura" },
+      { "title": "MINICURSO BÁSICO DE EDIÇÃO DE FOTOS COM LIGHTROOM MOBILE: COMO TRANSFORMAR SUAS FOTOS COM EDIÇÃO DIGITAL", "author": "Victor Manoel Pinheiro Coutinho" },
+      { "title": "MINICURSO DE LATEX NO OVERLEAF: PADRONIZAÇÃO E QUALIDADE EM TRABALHOS ACADÊMICOS E CIENTÍFICOS.", "author": "Mario Gustavo Humberto da Silva" },
+      { "title": "PREPARAÇÃO PARA A OLIMPÍADA BRASILEIRA DE INFORMÁTICA EM CRATEÚS: DESENVOLVIMENTO DE RACIOCÍNIO LÓGICO E COMPUTACIONAL PARA ALUNOS DO ENSINO FUNDAMENTAL", "author": "Fernanda Ferreira" },
+      { "title": "USO DE REDES NEURAIS CONVOLUCIONAIS E APRENDIZADO DE MÁQUINA PARA AUXÍLIO NO DIAGNÓSTICO DE CÁRIES OCLUSAIS A PARTIR DE IMAGENS", "author": "Ana Larissa Teixeira Dantas" },
+      { "title": "UTILIZAÇÃO DE TÉCNICAS DE ENGAJAMENTO NA MONITORIA DE SISTEMAS OPERACIONAIS", "author": "Laércio Levi Silva de Melo" }
+    ]
+  },
+  {
+    "day": 11,
+    "area": "Meio Ambiente e Sustentabilidade..",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 15",
+    "dateTime": "11/11/2025 das 14:00 às 17:00",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "ÁGUAS EM RISCO: VULNERABILIDADE DOS AQUÍFEROS SOB INFLUÊNCIA DO LIXÃO DO MUNICIPAL DE CRATEÚS-CE", "author": "Maria Eduarda Souza Mendes" },
+      { "title": "ANÁLISE DO CONSUMO E DO DESPERDÍCIO DE ALIMENTOS NO RESTAURANTE UNIVERSITÁRIO DA UFC – CAMPUS CRATEÚS: CONSUMO PER CAPITA, SOBRA E RESTO (2022.1 A 2025.1)", "author": "Maria Dianária da Silva" },
+      { "title": "APLICAÇÃO DA METODOLOGIA GOD NA AVALIAÇÃO DA VULNERABILIDADE HÍDRICA NO AÇUDE FLOR DO CAMPO E POÇOS ARTESIANOS DE NOVO ORIENTE–CE.", "author": "Andreia Santos Ricardo" },
+      { "title": "ATIVAÇÃO QUÍMICA DA PALMA FORRAGEIRA (OPUNTIA STRICTA) PARA USO COMO BIOFILTRO NA AVALIAÇÃO DA QUALIDADE DA ÁGUA", "author": "Ana Izabela Melo Bezerra" },
+      { "title": "MAPEAMENTO DE CISTERNAS E EDUCAÇÃO COMUNITÁRIA PARA A GESTÃO SUSTENTÁVEL DA ÁGUA EM CURRAL VELHO, CRATEÚS - CE.", "author": "Amanda Torres Martins" },
+      { "title": "POLUENTES NO RIO POTI: ALERTA PARA A SAÚDE HUMANA EM PEIXES DO SEMIÁRIDO.", "author": "Francisca Nicoli Lima Sales" },
+      { "title": "POTENCIAL DE BIOFILTROS DE PALMA FORRAGEIRA NO TRATAMENTO DE ÁGUAS SUPERFICIAIS", "author": "Ester Gama da Silva" },
+      { "title": "SERTÕES ESCLARECIDOS: ENFRENTANDO A DESINFORMAÇÃO E FORTALECENDO A EDUCAÇÃO SOBRE MUDANÇAS CLIMÁTICAS", "author": "Luana Karen Paiva dos Santos" },
+      { "title": "TRATAMENTO DE EFLUENTES COM BIOFILTROS DE PALMA FORRAGEIRA: POTENCIAL DE APLICAÇÃO SUSTENTÁVEL NO SEMIÁRIDO NORDESTINO", "author": "Fhelipe Eufrasino Melo de Pinho" }
+    ]
+  },
+  {
+    "day": 11,
+    "area": "Práticas e Políticas Educacionais.",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 16",
+    "dateTime": "11/11/2025 das 14:00 às 17:00",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "ACOMPANHAMENTO DOS BENEFICIÁRIOS DO AUXÍLIO INGRESSANTE: ESTRATÉGIA PARA A PERMANÊNCIA ESTUDANTIL NO CAMPUS DA UNIVERSIDADE FEDERAL DO CEARÁ EM CRATEÚS", "author": "Antonio Eloi Mineiro Gomes" },
+      { "title": "ANÁLISE DE EVASÃO NO ENSINO SUPERIOR: UMA PROPOSTA DE MAPEAMENTO DO SEU DIAGNÓSTICO ATUAL E A FREQUÊNCIA DE POSSIVEIS FATORES NA UNIVERSIDADE FEDERAL DO CEARÁ - CAMPUS CRATEÚS", "author": "Kelviane Marques Barros" },
+      { "title": "ARRAIÁ E CUPIDO PET COMO FERRAMENTAS DE FORTALECIMENTO DA VIDA ACADÊMICA", "author": "Maressa Oliveira Martins" },
+      { "title": "ATIVIDADES DO PAIP 2025 PARA O INCENTIVO À PERMANÊNCIA ESTUDANTIL NO CURSO DE SISTEMAS DE INFORMAÇÃO", "author": "Lívia Coelho Muniz" },
+      { "title": "DE INGRESSANTE A FORMADO: ESTRATÉGIAS DE INTEGRAÇÃO E PERTENCIMENTO NO CURSO DE CIÊNCIA DA COMPUTAÇÃO", "author": "Francisco Enzo Sousa Oliveira" },
+      { "title": "EXTENSÃO UNIVERSITÁRIA EM MOVIMENTO: A DANÇA COMO PROMOTORA DE INCLUSÃO, CULTURA E DESENVOLVIMENTO INFANTIL", "author": "Davylla Lourrane Freire de Oliveira" },
+      { "title": "VEREDAS DA LITERATURA CEARENSE: LEITURAS E RODAS DE CONVERSA", "author": "Maria Eduarda Gomes Araujo" },
+      { "title": "YOGA COMO OÁSIS PARA A ALMA: RELATO DE EXPERIÊNCIA DE UMA EXTENSÃO DE PRÁTICAS PSICO─CORPORAIS QUE REGARAM VIDAS E COLHERAM BEM-ESTAR", "author": "Arthur Michell Anthony Moreira Alves de Morais" }
+    ]
+  },
+  {
+    "day": 12,
+    "area": "Ciências Exatas, Engenharias e suas Aplicações",
+    "type": "Exposição de Pôster",
+    "sessionTitle": "Sessão 20",
+    "dateTime": "12/11/2025 das 08:30 às 10:00",
+    "duration": "01h30min",
+    "presentations": [
+      { "title": "APRENDIZAGEM COOPERATIVA COMO INSTRUMENTO PARA O DESENVOLVIMENTO DO ENSINO DE SISTEMAS OPERACIONAIS E MELHORIA NO DESEMPENHO ACADÊMICO E INTERPESSOAL: UM RELATO DE EXPERIÊNCIA.", "author": "Vinicius Azevedo Bezerra" },
+      { "title": "AVALIAÇÃO DA QUALIDADE DA ÁGUA POR SENSORIAMENTO REMOTO DO AÇUDE EDSON QUEIROZ, CEARÁ", "author": "Dannila Braga Oliveira" },
+      { "title": "AVALIAÇÃO DO POTENCIAL DE MISTURAS ARGILOSAS PARA IMPRESSÃO 3D: INTRODUZINDO INOVAÇÃO PARA AS CONSTRUÇÕES EM TERRA CRUA NO CEARÁ", "author": "Francisco David Martins Vieira" },
+      { "title": "MONITORAMENTO DA EVAPORAÇÃO POR SENSORIAMENTO REMOTO NO AÇUDE EDSON QUEIROZ, CEARÁ", "author": "Francisca Anorata Bento Portela." },
+      { "title": "ORGANIZAÇÃO E SISTEMATIZAÇÃO DO ACERVO MINERALÓGICO COMO SUPORTE AO ENSINO E PESQUISA EM GEOLOGIA E MINERAÇÃO NO CAMPUS DA UFC EM CRATEÚS", "author": "Francisco Reginaldo Moreira Sales Junior" }
+    ]
+  },
+  {
+    "day": 12,
+    "area": "Computação e Tecnologia da Informação....",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 17",
+    "dateTime": "12/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "ANALISANDO PERFIS DE ESTUDANTES DO ENSINO SUPERIOR COM O OBJETIVO DE CONSTRUIR UMA FERRAMENTA QUE ATUARÁ COMO UMA PLATAFORMA ON-LINE PARA PREVER POSSÍVEIS CASOS DE EVASÃO ESTUDANTIL EM INSTITUIÇÕES DE ENSINO SUPERIOR DE TODO O BRASIL", "author": "Hércules Bruno Ferreira Norte" },
+      { "title": "APRENDIZADO DE MÁQUINA EM EMPRÉSTIMOS P2P: EQUILIBRANDO PRECISÃO, TRANSPARÊNCIA, SUSTENTABILIDADE E JUSTIÇA", "author": "Antonio Everton Coelho Teixeira" },
+      { "title": "FATORES AUTOPERCEBIDOS POR ESTUDANTES DE TI NA PRIMEIRA DISCIPLINA DE PROGRAMAÇÃO", "author": "Maria Beatriz Rodrigues Martins" },
+      { "title": "GRAFTEA: UM GRAFO DE CONHECIMENTO ACADÊMICO EM SUPORTE VISUAL DIGITAL PARA ESTUDANTES AUTISTAS", "author": "Giovanna Maria Verissimo Xavier" },
+      { "title": "INICIAÇÃO A DOCÊNCIA LÓGICA PARA COMPUTAÇÃO", "author": "Antonio Wellington Damasceno Melo" },
+      { "title": "PET.XLSX: DESCOBRINDO O GOOGLE PLANILHAS COM VÍDEOS CURTOS", "author": "Josué Alexandre de Araújo" },
+      { "title": "PROPOSTA DE UMA ARQUITETURA RFID PARA GESTÃO DE INVENTÁRIO DA UFC CAMPUS DE CRATEÚS", "author": "Francisco William de Sousa Peres" },
+      { "title": "UMA ANÁLISE COMPARATIVA DE TÉCNICAS DE APRENDIZADO DE MÁQUINA PARA CLASSIFICAÇÃO DE GRÃOS DE FEIJÃO SECO", "author": "Maria Beatriz Rodrigues Martins" }
+    ]
+  },
+  {
+    "day": 12,
+    "area": "Meio Ambiente e Sustentabilidade...",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 18",
+    "dateTime": "12/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "ANÁLISE COMPARATIVA DAS NARRATIVAS SOCIAIS E INSTITUCIONAIS SOBRE IMPACTOS SOCIOAMBIENTAIS DA CONSTRUÇÃO DA BARRAGEM DE FRONTEIRAS, CRATEÚS", "author": "Thaiara Basílio de Melo Gonçalves" },
+      { "title": "AVALIAÇÃO ECOTOXICOLÓGICA DA CONTAMINAÇÃO DO SOLO EM ÁREA DE DISPOSIÇÃO IRREGULAR DE RESÍDUOS SÓLIDOS URBANOS UTILIZANDO FOLSOMIA CANDIDA", "author": "Francisco Luanderson da Silva" },
+      { "title": "ESGOTAMENTO SANITÁRIO RURAL NO SEMIÁRIDO: PRECARIEDADE E SOLUÇÕES SUSTENTÁVEIS PARA COMUNIDADES ISOLADAS", "author": "Ian Lucas Silva Melo" },
+      { "title": "IMPACTOS DE LIXÃO URBANO SOBRE A QUALIDADE HÍDRICA: TOXICIDADE DE SEDIMENTOS DO AÇUDE RIACHO DOS CAVALOS EM DAPHNIA MAGNA (CRATEÚS-CE)", "author": "Beatriz Magalhães da Silva" },
+      { "title": "MÉTODOS ESTATÍSTICOS APLICADOS A ANÁLISE DA QUALIDADE DA ÁGUA DO RIO POTI NO MUNICÍPIO DE CRATEÚS - CE.", "author": "Joanna Linda das Flores Leitao Soares" },
+      { "title": "O USO DO GEORREFERENCIAMENTO PARA A ANÁLISE CLIMÁTICA NOS SERTÕES DE CRATEÚS", "author": "Francisca Sabrina Pereira Mesquita" },
+      { "title": "PONTOS DE MEMÓRIAS COMO ELOS ENTRE TERRITÓRIOS ATINGIDOS PELA BARRAGEM DE FRONTEIRAS E SEUS FUTUROS REASSENTAMENTOS.", "author": "Luzia Pereira Rodrigues Neta" },
+      { "title": "PRODUÇÃO AUDIOVISUAL COMO RECURSO DIDÁTICO PARA O TRATAMENTO DE RESÍDUOS QUÍMICOS NO LABORATÓRIO DE QUÍMICA DA UFC-CRATEÚS", "author": "Antonia Alexsandra Fernandes de Souza" },
+      { "title": "TÉCNICAS RECENTES DE EXTRAÇÃO E CARACTERIZAÇÃO DE MICROPLÁSTICOS EM MATRIZES AMBIENTAIS", "author": "Daniel Menezes de Melo" }
+    ]
+  },
+  {
+    "day": 12,
+    "area": "Métodos Alternativos de Ensino.",
+    "type": "Apresentação Oral",
+    "sessionTitle": "Sessão 19",
+    "dateTime": "12/11/2025 das 08:30 às 11:30",
+    "duration": "03 horas",
+    "presentations": [
+      { "title": "ANÁLISE DE METODOLOGIAS ATIVAS EM MECÂNICA DOS FLUIDOS E TRANSFERÊNCIA DE CALOR", "author": "Vilmar Faustino do Nascimento" },
+      { "title": "AULAS PRÁTICAS DE HIDRÁULICA PARA AS ENGENHARIAS", "author": "Grislaine Ambrozio Calixto" },
+      { "title": "ENTRE INTEGRAIS E GRADIENTES: A INICIAÇÃO À DOCÊNCIA COMO UM CAMINHO DE APRENDIZADO", "author": "Francisco Davilo Pereira Machado" },
+      { "title": "O IMPACTO DE SIMULAÇÕES NA APRENDIZAGEM DE QUÍMICA POR ESTUDANTES DE ENGENHARIA", "author": "Antony Louhan Carvalho Ferreira" },
+      { "title": "O LÁPIS COMO ANTÍDOTO: ARTE EM TERRITÓRIO DE EXATAS", "author": "Josué Lemos Mesquita" },
+      { "title": "PRODUÇÃO ESCRITA DE GÊNEROS TEXTUAIS ACADÊMICOS: UM DESAFIO AO ESTUDANTES UNIVERSITÁRIOS DO MUNICÍPIO DE CRATEÚS-CE", "author": "Elislândia Aparecida Horlanda da Silva" },
+      { "title": "ROBÓTICA E IOT NO ENSINO REGULAR: INOVAÇÃO, DESAFIOS E EXPANSÃO EDUCACIONAL NOS SERTÕES DE CRATEÚS", "author": "Francisco Dagoberto Silva dos Santos" },
+      { "title": "SUPERAÇÃO PET: AS VIDEOAULAS E SEU IMPACTO NA APRENDIZAGEM DE ÁLGEBRA LINEAR", "author": "Ermeson Gomes Coêlho" }
+    ]
+  },
+  {
+    "day": 12,
+    "area": "Métodos Alternativos de Ensino",
+    "type": "Exposição de Pôster",
+    "sessionTitle": "Sessão 21",
+    "dateTime": "12/11/2025 das 10:00 às 11:30",
+    "duration": "01h30min",
+    "presentations": [
+      { "title": "CRIAÇÃO DE ACERVO DIGITAL E IMPRESSO DE MINERAIS DO LGM: APRIMORANDO A PESQUISA E O ENSINO EM GEOLOGIA E MINERALOGIA", "author": "Moni Kelly Bezerra da Silva" },
+      { "title": "IMPACTOS PSICOSSOCIAIS ASSOCIADOS AO LAGO DE FRONTEIRAS: ASPECTOS COMUNITÁRIOS", "author": "Ellen Adrina Silva de Sousa" },
+      { "title": "MONITORIA EM GEOLOGIA GERAL E PETROGRAFIA: FERRAMENTA DE SUPORTE AO APRENDIZADO NA GRADUAÇÃO EM ENGENHARIA DE MINAS", "author": "Maria Vitória de Medeiros Pereira" }
+    ]
+  },
+  {
+    "day": 12,
+    "area": "Meio Ambiente e Sustentabilidade",
+    "type": "Exposição de Pôster",
+    "sessionTitle": "Sessão 22",
+    "dateTime": "12/11/2025 das 10:00 às 11:30",
+    "duration": "01h30min",
+    "presentations": [
+      { "title": "ADEQUAÇÃO DA TEMPERATURA EM PREPARAÇÕES SERVIDAS NO RESTAURANTE UNIVERSITÁRIO DA UFC — CAMPUS CRATEÚS", "author": "Antonio Marcio Nobre de Medeiros" },
+      { "title": "PREDOMINÂNCIA DE CIANOBACTÉRIAS NO RESERVATÓRIO JABURU II, INDEPENDÊNCIA-CE", "author": "Joao Vitor Ribeiro da Silva" },
+      { "title": "PREVISÃO ORÇAMENTÁRIA DE CUSTOS PARA REVITALIZAÇÃO DE UMA CISTERNA DE PLACA NO SEMIÁRIDO .", "author": "Antonio Kauan de Sousa Costa" }
+    ]
+  },
+  {
+    "day": 12,
+    "area": "Comissão Organizadora",
+    "type": "Apresentação",
+    "sessionTitle": "Encontros Universitários 2025",
+    "dateTime": "12/11/2025 das 08:00 às 21:00",
+    "duration": null,
+    "presentations": [
+      { "title": "Atividades gerais da comissão organizadora.", "author": "" }
+    ]
+  }
+]

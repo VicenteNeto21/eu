@@ -1,0 +1,613 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Participe dos Encontros Universitários 2025 da UFC Campus Crateús. Um dos principais eventos de divulgação científica e cultural do Ceará, com o tema 'Mundo em transformação'." />
+  <meta name="keywords" content="Encontros Universitários, UFC, Crateús, evento acadêmico, ciência, cultura, extensão, pesquisa, ensino" />
+  <meta name="author" content="UFC Campus Crateús" />
+
+  <!-- Open Graph Meta Tags (para redes sociais como Facebook, LinkedIn) -->
+  <meta property="og:title" content="Encontros Universitários 2025 - UFC Crateús" />
+  <meta property="og:description" content="Participe dos Encontros Universitários 2025 da UFC Campus Crateús. Um dos principais eventos de divulgação científica e cultural do Ceará." />
+  <meta property="og:image" content="img/logo-eu-2025.png" />
+  <meta property="og:image:alt" content="Logo dos Encontros Universitários 2025" />
+  <meta property="og:url" content="https://site.crateus.ufc.br/eucrateus/edicao-2025/" />
+  <meta property="og:site_name" content="Encontros Universitários 2025" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Encontros Universitários 2025 - UFC Crateús" />
+  <meta name="twitter:description" content="Participe dos Encontros Universitários 2025 da UFC Campus Crateús. Um dos principais eventos de divulgação científica e cultural do Ceará." />
+  <meta name="twitter:image" content="img/logo-eu-2025.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/logo-eu-2025.png" type="image/png" />
+  <link rel="apple-touch-icon" href="img/logo-eu-2025.png" />
+
+  <title>Encontros Universitários 2025 - UFC Crateús</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            ufc: {
+              darkblue: '#1E347C',
+              green: '#39A84C',
+              mediumblue: '#5266AF',
+              lightblue: '#8594D0',
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    .hero-pattern {
+      background-image: radial-gradient(circle at 25% 50%, rgba(57, 168, 76, 0.1) 0%, transparent 50%);
+    }
+    .section-divider {
+      height: 80px;
+      width: 100%;
+      background: linear-gradient(to bottom right, #1E347C 49%, #5266AF 51%);
+    }
+    .timeline-item:not(:last-child):after {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 24px;
+      height: 100%;
+      width: 2px;
+      background: #39A84C;
+    }
+    button:focus, a:focus {
+      outline: 2px solid #39A84C;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-ufc-darkblue text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-ufc-darkblue p-4 shadow-lg sticky top-0 z-50 border-b border-ufc-green/20">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <img src="img/logo-eu-2025.png" alt="Banner Encontros Universitários 2025" class="h-12 sm:h-16" />
+      </div>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block" aria-label="Main navigation" role="navigation">
+        <ul class="flex space-x-6">
+          <li><a href="#sobre" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Sobre o evento">Sobre</a></li>
+          <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Inscrição no evento">Inscrição</a></li>
+          <li><a href="#edital" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Editais e comunicados">Edital</a></li>
+          <li><a href="#programacao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Programação do evento">Programação</a></li>
+          <li><a href="#contato" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Contato com a organização">Contato</a></li>
+        </ul>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle mobile menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-ufc-darkblue p-4" role="navigation" aria-label="Mobile navigation">
+      <ul class="flex flex-col space-y-4">
+        <li><a href="#sobre" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Sobre o evento">Sobre</a></li>
+        <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Inscrição no evento">Inscrição</a></li>
+        <li><a href="#edital" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Editais e comunicados">Edital</a></li>
+        <li><a href="#programacao" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Programação do evento">Programação</a></li>
+        <li><a href="#contato" class="hover:text-ufc-green transition text-sm nav-link" aria-label="Contato com a organização">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative text-center py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-ufc-darkblue via-ufc-mediumblue to-ufc-darkblue hero-pattern overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-10">
+      <div class="absolute top-10 sm:top-20 left-10 sm:left-20 w-32 sm:w-40 h-32 sm:h-40 rounded-full bg-ufc-green animate-pulse-slow"></div>
+      <div class="absolute bottom-10 right-10 sm:right-20 w-48 sm:w-60 h-48 sm:h-60 rounded-full bg-ufc-mediumblue animate-pulse-slow animation-delay-2000"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto">
+      <div class="inline-block bg-white/10 px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm mb-4 animate__animated animate__fadeIn">
+        Tema 2025: "Mundo em transformação"
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 animate__animated animate__fadeInDown">Encontros Universitários 2025</h1>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-light text-ufc-green mb-8 animate__animated animate__fadeIn animate__delay-1s font-bold">Campus Crateús - UFC</h2>
+      <p class="mt-6 max-w-2xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed animate__animated animate__fadeIn animate__delay-2s">
+        10, 11 e 12 de Novembro | Um dos principais eventos de divulgação científica e cultural do Ceará
+      </p>
+      <div class="mt-8 sm:mt-10 animate__animated animate__fadeIn animate__delay-3s">
+        <a href="#inscricao" class="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-ufc-green text-ufc-darkblue font-bold rounded-lg hover:bg-[#4cc75f] transition transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base">
+          Inscreva-se Agora
+        </a>
+      </div>
+      <div class="mt-8 sm:mt-10 animate__animated animate__fadeIn animate__delay-3s">
+        <p class="text-base sm:text-lg text-ufc-green font-bold">Faltam:</p>
+        <div id="countdown" class="text-2xl sm:text-3xl font-bold text-white flex justify-center space-x-2 sm:space-x-4" role="timer" aria-live="polite">
+          <span id="days" class="bg-ufc-green/20 px-3 py-1 rounded-lg" aria-label="Dias restantes">00</span>
+          <span>dias</span>
+          <span id="hours" class="bg-ufc-green/20 px-3 py-1 rounded-lg" aria-label="Horas restantes">00</span>
+          <span>horas</span>
+          <span id="minutes" class="bg-ufc-green/20 px-3 py-1 rounded-lg" aria-label="Minutos restantes">00</span>
+          <span>minutos</span>
+          <span id="seconds" class="bg-ufc-green/20 px-3 py-1 rounded-lg" aria-label="Segundos restantes">00</span>
+          <span>segundos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destaques -->
+  <section class="bg-ufc-mediumblue py-10 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <div class="bg-white/5 p-4 sm:p-6 rounded-xl border border-ufc-green/20 flex items-center">
+        <div class="bg-ufc-green/20 p-2 sm:p-3 rounded-full mr-3 sm:mr-4">
+          <svg class="w-6 sm:w-8 h-6 sm:h-8 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-bold text-sm sm:text-base">Evento Presencial</h3>
+          <p class="text-xs sm:text-sm opacity-80">Com toda a energia do encontro acadêmico</p>
+        </div>
+      </div>
+      <div class="bg-white/5 p-4 sm:p-6 rounded-xl border border-ufc-green/20 flex items-center">
+        <div class="bg-ufc-green/20 p-2 sm:p-3 rounded-full mr-3 sm:mr-4">
+          <svg class="w-6 sm:w-8 h-6 sm:h-8 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-bold text-sm sm:text-base">Acessível em Libras</h3>
+          <p class="text-xs sm:text-sm opacity-80">Inclusão e acessibilidade para todos</p>
+        </div>
+      </div>
+      <div class="bg-white/5 p-4 sm:p-6 rounded-xl border border-ufc-green/20 flex items-center">
+        <div class="bg-ufc-green/20 p-2 sm:p-3 rounded-full mr-3 sm:mr-4">
+          <svg class="w-6 sm:w-8 h-6 sm:h-8 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-bold text-sm sm:text-base">Emite Certificado</h3>
+          <p class="text-xs sm:text-sm opacity-80">Validação da participação acadêmica</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="relative py-16 sm:py-20 px-4 sm:px-6 bg-ufc-mediumblue">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">Sobre o Evento</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center mb-16 sm:mb-20">
+        <div>
+          <h3 class="text-2xl sm:text-3xl font-bold text-ufc-green mb-6">Objetivo</h3>
+          <p class="text-base sm:text-lg leading-relaxed mb-6">
+            Divulgar o desenvolvimento de atividades e ferramentas no âmbito do ensino, pesquisa e extensão realizadas por alunos, servidores técnico-administrativos e professores da UFC e de Instituições de Ensino e Pesquisa da região do Sertão de Crateús.
+          </p>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border-l-4 border-ufc-green">
+            <h4 class="font-bold text-base sm:text-lg mb-2">Ciclo Temático</h4>
+            <p class="text-ufc-green font-medium text-sm sm:text-base">inclusão → educação → transformação</p>
+          </div>
+        </div>
+        <div class="bg-white/5 rounded-xl p-4 sm:p-6 border border-ufc-green/20">
+          <h3 class="text-2xl sm:text-3xl font-bold text-ufc-green mb-6">Público-Alvo</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <svg class="h-5 sm:h-6 w-5 sm:w-6 text-ufc-green mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span class="text-sm sm:text-base">Alunos, professores e servidores técnico-administrativos da UFC Campus Crateús</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 sm:h-6 w-5 sm:w-6 text-ufc-green mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span class="text-sm sm:text-base">Instituições de Ensino e Pesquisa da região do Sertão de Crateús</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="h-5 sm:h-6 w-5 sm:w-6 text-ufc-green mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span class="text-sm sm:text-base">Demais interessados na temática do evento</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Eixos Temáticos -->
+      <div class="mt-12 sm:mt-16">
+        <h3 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">Eixos dos Encontros</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">X Encontro de Extensão</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">X Encontro de Iniciação Acadêmica</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">X Encontro de Bolsistas do PAIP</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">X Encontro de Iniciação à Docência</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">X Encontro de Iniciação Científica</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">VII Encontro de Docência</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">VI Encontro de PET</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">VI Encontro de Cultura Artística</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">VI Encontro de Empreendedorismo</h4>
+          </div>
+          <div class="bg-ufc-darkblue/50 p-4 sm:p-6 rounded-lg border border-ufc-green/20 hover:border-ufc-green/50 transition">
+            <h4 class="font-bold text-base sm:text-lg mb-2">II Encontro de Experiências Estudantis</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inscrição -->
+  <section id="inscricao" class="relative py-16 sm:py-20 px-4 sm:px-6 bg-ufc-darkblue">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">Participe Conosco</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Autor -->
+        <div class="bg-ufc-mediumblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20 hover:border-ufc-green/50 transition transform hover:-translate-y-2">
+          <div class="bg-ufc-green/20 p-2 sm:p-3 rounded-full mb-4">
+            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold mb-4">Autor</h3>
+          <p class="mb-6 text-sm sm:text-base">Submeta seu trabalho e apresente os resultados de sua pesquisa.</p>
+          <a href="#" class="inline-block px-3 sm:px-4 py-2 bg-ufc-green text-ufc-darkblue rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#4cc75f] transition" aria-label="Inscrição para autores">Inscrições abertas</a>
+        </div>
+        <!-- Orientador -->
+        <div class="bg-ufc-mediumblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20 hover:border-ufc-green/50 transition transform hover:-translate-y-2">
+          <div class="bg-ufc-green/20 p-2 sm:p-3 rounded-full mb-4">
+            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 006 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold mb-4">Orientador</h3>
+          <p class="mb-6 text-sm sm:text-base">Oriente trabalhos e participe da avaliação das pesquisas.</p>
+          <a href="#" class="inline-block px-3 sm:px-4 py-2 bg-ufc-green text-ufc-darkblue rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#4cc75f] transition" aria-label="Informações para orientadores">Saiba mais</a>
+        </div>
+        <!-- Avaliador -->
+        <div class="bg-ufc-mediumblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20 hover:border-ufc-green/50 transition transform hover:-translate-y-2">
+          <div class="bg-ufc-green/20 p-2 sm:p-3 rounded-full mb-4">
+            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold mb-4">Avaliador</h3>
+          <p class="mb-6 text-sm sm:text-base">Participe da comissão científica avaliando os trabalhos.</p>
+          <a href="#" class="inline-block px-3 sm:px-4 py-2 bg-ufc-green text-ufc-darkblue rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#4cc75f] transition" aria-label="Inscrição para avaliadores">Inscrições abertas</a>
+        </div>
+        <!-- Ouvinte -->
+        <div class="bg-ufc-mediumblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20 hover:border-ufc-green/50 transition transform hover:-translate-y-2">
+          <div class="bg-ufc-green/20 p-2 sm:p-3 rounded-full mb-4">
+            <svg class="w-6 sm:w-8 h-6 sm:h-8 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold mb-4">Ouvinte</h3>
+          <p class="mb-6 text-sm sm:text-base">Participe das atividades sem apresentar trabalho.</p>
+          <a href="#" class="inline-block px-3 sm:px-4 py-2 bg-ufc-green text-ufc-darkblue rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#4cc75f] transition" aria-label="Inscrição para ouvintes">Inscreva-se</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modalidades -->
+  <section class="py-16 sm:py-20 px-4 sm:px-6 bg-ufc-mediumblue">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">Modalidades de Apresentação</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <div class="bg-ufc-darkblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20 hover:border-ufc-green/50 transition transform hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-lg sm:text-xl font-bold">Apresentação Oral</h3>
+            <span class="bg-ufc-green/20 text-ufc-green text-xs px-2 py-1 rounded-full">Tradicional</span>
+          </div>
+          <p class="text-sm sm:text-base">Autores destacam resultados e debates para aprimorar seus trabalhos, promovendo comunicação eficaz.</p>
+        </div>
+        <div class="bg-ufc-darkblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20 hover:border-ufc-green/50 transition transform hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-lg sm:text-xl font-bold">Apresentação em Pitch</h3>
+            <span class="bg-ufc-blue/20 text-ufc-lightblue text-xs px-2 py-1 rounded-full">Apresentação</span>
+          </div>
+          <p class="text-sm sm:text-base">Modalidade promove síntese e comunicação eficaz para divulgar trabalhos de forma clara e objetiva.</p>
+        </div>
+        <div class="bg-ufc-darkblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20 hover:border-ufc-green/50 transition transform hover:-translate-y-2">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-lg sm:text-xl font-bold">Apresentação em Pôster</h3>
+            <span class="bg-ufc-lightblue/20 text-ufc-lightblue text-xs px-2 py-1 rounded-full">Visual</span>
+          </div>
+          <p class="text-sm sm:text-base">O pôster transmite informações práticas ou de pesquisa de modo claro e objetivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Programação -->
+<section id="programacao" class="py-16 sm:py-20 px-4 sm:px-6 bg-ufc-darkblue">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">Programação</h2>
+      <!-- Search Input -->
+      <div class="mb-8 max-w-lg mx-auto">
+        <label for="search-programacao" class="sr-only">Buscar apresentação por título ou autor</glabel>
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+          </div>
+          <input id="search-programacao" name="search" class="block w-full bg-ufc-mediumblue/60 border border-ufc-green/30 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-ufc-green focus:border-ufc-green" placeholder="Buscar por título ou autor..." type="search">
+        </div>
+      </div>
+      <!-- Abas de Navegação por Dia -->
+      <div class="mb-8 flex justify-center border-b border-ufc-green/20">
+        <button data-tab="dia-10" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-ufc-green text-ufc-green">10/11</button>
+        <button data-tab="dia-11" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-transparent text-white/70 hover:text-white">11/11</button>
+        <button data-tab="dia-12" class="tab-button px-4 py-2 text-lg font-semibold border-b-2 border-transparent text-white/70 hover:text-white">12/11</button>
+      </div>
+
+      <!-- Conteúdo das Abas -->
+      <div id="programacao-content">
+        <!-- Dia 10 -->
+        <div id="dia-10" class="tab-content space-y-8">
+          <!-- O conteúdo será inserido aqui pelo JavaScript -->
+        </div>
+        <!-- Dia 11 -->
+        <div id="dia-11" class="tab-content space-y-8 hidden">
+          <!-- O conteúdo será inserido aqui pelo JavaScript -->
+        </div>
+        <!-- Dia 12 -->
+        <div id="dia-12" class="tab-content space-y-8 hidden">
+          <!-- O conteúdo será inserido aqui pelo JavaScript -->
+        </div>
+        <div id="no-results" class="hidden text-center text-white/80 py-8">
+          <p>Nenhuma apresentação encontrada para o termo buscado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Editais section replacement -->
+<section id="edital" class="py-16 sm:py-20 px-4 sm:px-6 bg-ufc-mediumblue">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">Cronograma de Atividades</h2>
+    <div class="bg-ufc-darkblue/50 rounded-xl p-6 sm:p-8" >
+      <div id="cronograma-container" class="space-y-6">
+        <!-- O cronograma será inserido aqui pelo JavaScript -->
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Contato -->
+  <section id="contato" class="relative py-16 sm:py-20 px-4 sm:px-6 bg-ufc-darkblue">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ficou com dúvidas?</h2>
+        <p class="text-base sm:text-xl text-white/80 max-w-2xl mx-auto">Entre em contato com nossa comissão organizadora</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
+        <div class="bg-ufc-mediumblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20">
+          <h3 class="text-lg sm:text-xl font-bold mb-6 flex items-center">
+            <svg class="w-5 sm:w-6 h-5 sm:h-6 mr-2 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            Email Oficial
+          </h3>
+          <a href="mailto:eventos@crateus.ufc.br" class="text-base sm:text-lg hover:text-ufc-green transition">eventos@crateus.ufc.br</a>
+          <p class="mt-4 text-white/70 text-sm sm:text-base">Respondemos em até 48 horas úteis</p>
+        </div>
+        <div class="bg-ufc-lightblue/50 p-6 sm:p-8 rounded-xl border border-ufc-green/20">
+          <h3 class="text-lg sm:text-xl font-bold mb-6 flex items-center">
+            <svg class="w-5 sm:w-6 h-5 sm:h-6 mr-2 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+            </svg>
+            Redes Sociais
+          </h3>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 sm:w-12 h-10 sm:h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" aria-label="Facebook">
+              <svg class="w-5 sm:w-6 h-5 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 sm:w-12 h-10 sm:h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" aria-label="Instagram">
+              <svg class="w-5 sm:w-6 h-5 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 sm:w-12 h-10 sm:h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" aria-label="Twitter">
+              <svg class="w-5 sm:w-6 h-5 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+          <p class="mt-4 text-white/70 text-sm sm:text-base">Siga-nos para ficar por dentro das novidades</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Mapa -->
+<section class="bg-ufc-lightblue">
+  <div class="max-w-7xl mx-auto p-4 sm:p-6">
+    <div class="bg-white/10 rounded-xl overflow-hidden border border-white/20">
+      <noscript>
+        <div class="p-4 text-center text-sm sm:text-base text-ufc-darkblue bg-ufc-green/10">
+          Enable JavaScript to see Google Maps.
+        </div>
+      </noscript>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.925096756705!2d-40.6430267!3d-5.1868803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x796f5c79bc257a3:0x3e32c3e04fe73b21!2sAv.%20Prfa.%20Machadinha%20Lima%2C%20Crate%C3%BAs%2C%20CE%2C%2063700-000!5e0!3m2!1spt-BR!2sbr!4v1722292380!5m2!1spt-BR!2sbr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="mt-6 text-center">
+      <h4 class="text-lg sm:text-xl font-bold flex items-center justify-center gap-2">
+        <svg class="w-5 h-5 text-ufc-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"></circle>
+        </svg>
+        Local do Evento
+      </h4>
+      <p class="text-sm sm:text-base">Universidade Federal do Ceará - Campus Crateús</p>
+      <p class="text-sm sm:text-base">Av. Prfa. Machadinha Lima, Crateús, CE, 63700-000</p>
+      <a href="https://www.google.com/maps/dir/''/Universidade+Federal+do+Cear%C3%A1+-+Campus+de+Crate%C3%BAs+Av.+Prfa.+Machadinha+Lima+-+Crate%C3%BAs+CE+63700-000/@-5.1868016,-40.642222,17z/data=!4m13!4m12!1m5!1m1!1s0x796f5c79bc257a3:0x3e32c3e04fe73b21!2m2!1d-40.6430267!2d-5.1868803!1m5!1m1!1s0x796f5c79bc257a3:0x3e32c3e04fe73b21!2m2!1d-40.6430267!2d-5.1868803?entry=ttu&g_ep=EgoyMDI1MDcyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="mt-4 inline-flex items-center px-4 py-2 bg-ufc-green text-ufc-darkblue font-bold rounded-lg hover:bg-[#4cc75f] transition text-sm" aria-label="Obter direções no Google Maps">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+        </svg>
+        Obter Direções
+      </a>
+    </div>
+  </div>
+</section>
+  <!-- Publicações -->
+  <section class="py-16 sm:py-20 px-4 sm:px-6 bg-ufc-darkblue">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 sm:mb-16">Publicações</h2>
+      <div class="bg-ufc-mediumblue/50 rounded-xl p-6 sm:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-bold text-ufc-green mb-6">Edital Completo</h3>
+            <p class="mb-6 text-sm sm:text-base">Acesse o documento oficial com todas as normas e diretrizes para participação nos Encontros Universitários 2025.</p>
+            <a href="#" class="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-ufc-green text-ufc-darkblue font-bold rounded-lg hover:bg-[#4cc75f] transition text-xs sm:text-sm" aria-label="Baixar edital completo">
+              Baixar Edital
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+            </a>
+          </div>
+          <div>
+            <h3 class="text-xl sm:text-2xl font-bold text-ufc-green mb-6">Anais do Evento</h3>
+            <p class="mb-6 text-sm sm:text-base">Confira as publicações dos anos anteriores com os trabalhos apresentados nos Encontros Universitários.</p>
+            <a href="#" class="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 transition text-xs sm:text-sm" aria-label="Acessar anais do evento">
+              Acessar Anais
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-ufc-darkblue py-10 sm:py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold mb-4">EU 2025</h3>
+          <p class="text-sm sm:text-base">Encontros Universitários da UFC Campus Crateús - Edição 2025</p>
+        </div>
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold mb-4">Navegação</h3>
+          <ul class="space-y-2">
+            <li><a href="#sobre" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Sobre o evento">Sobre</a></li>
+            <li><a href="#inscricao" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Inscrição no evento">Inscrição</a></li>
+            <li><a href="#programacao" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Programação do evento">Programação</a></li>
+            <li><a href="#edital" class="hover:text-ufc-green transition text-sm sm:text-base nav-link" aria-label="Editais e comunicados">Editais</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold mb-4">Informações</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Objetivo do evento">Objetivo</a></li>
+            <li><a href="#" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Público-alvo do evento">Público-alvo</a></li>
+            <li><a href="#" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Modalidades de apresentação">Modalidades</a></li>
+            <li><a href="#" class="hover:text-ufc-green transition text-sm sm:text-base" aria-label="Comunicados do evento">Comunicados</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold mb-4">Siga-nos</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="w-8 sm:w-10 h-8 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" aria-label="Facebook">
+              <svg class="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-8 sm:w-10 h-8 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" aria-label="Instagram">
+              <svg class="w-4 sm:w-5 h-4 sm:h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 text-center text-xs sm:text-sm text-white/70">
+        <p>© 2025 Universidade Federal do Ceará - Campus Crateús</p>
+        <p class="mt-1">Desenvolvido para os Encontros Universitários 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script/main.js" defer></script>
+</body>
+</html>
