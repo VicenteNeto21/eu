@@ -70,17 +70,22 @@ Contém um array de objetos, onde cada objeto representa um item no cronograma d
 
 ### `database/programacao.json`
 
-Contém um array de objetos, onde cada objeto representa uma sessão de apresentação (Oral, Pitch ou Pôster). Inclui detalhes como dia, área, tipo, título da sessão, horário e uma lista de apresentações.
+Contém um array de objetos, onde cada objeto representa uma sessão de apresentação (Oral, Pitch ou Pôster). Inclui detalhes como dia, área, tipo, título da sessão, sala, horário, banca avaliadora e uma lista de apresentações.
 
 ```json
 {
   "day": 10,
   "area": "Computação e Tecnologia da Informação",
-  "type": "Pitch",
-  "sessionTitle": "Sessão 04",
+  "type": "Apresentação Oral",
+  "sessionTitle": "Sessão 01",
+  "room": "Sala 01",
   "dateTime": "10/11/2025 das 08:30 às 10:00",
+  "banca": [
+    "Nome do Avaliador 1",
+    "Nome do Avaliador 2"
+  ],
   "presentations": [
-    { "title": "Título do Trabalho", "author": "Nome do Autor" }
+    { "author": "Nome do Autor", "title": "Título do Trabalho" }
   ]
 }
 ```

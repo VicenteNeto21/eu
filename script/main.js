@@ -130,18 +130,26 @@ async function loadProgramacao() {
           </li>`;
         }).join('');
 
-        const durationHTML = sessao.duration ? `| Duração: ${sessao.duration}` : '';
+        const bancaHTML = sessao.banca && sessao.banca.length > 0
+          ? `<div class="mt-4 pt-4 border-t border-ufc-green/20">
+               <p class="text-sm font-semibold text-ufc-green mb-2">Banca Avaliadora:</p>
+               <ul class="text-sm text-white/80 space-y-1">
+                 ${sessao.banca.map(avaliador => `<li>- ${avaliador}</li>`).join('')}
+               </ul>
+             </div>`
+          : '';
 
         dailySessions[sessao.day] += `
           <div class="session-card bg-ufc-mediumblue/50 rounded-xl p-6">
             <div class="border-b border-ufc-green/30 pb-4 mb-4">
               <p class="text-sm text-ufc-green font-semibold">${sessao.area}</p>
-              <h3 class="text-xl font-bold">${sessao.type}: "${sessao.sessionTitle}"</h3>
-              <p class="text-sm text-white/80">${sessao.dateTime} ${durationHTML}</p>
+              <h3 class="text-xl font-bold">${sessao.type} - ${sessao.sessionTitle} - ${sessao.room} </h3>
+              <p class="text-sm text-white/80">${sessao.dateTime}</p>
             </div>
             <ul class="space-y-4">
               ${presentationsHTML}
             </ul>
+            ${bancaHTML}
           </div>`;
       }
     }
@@ -170,7 +178,10 @@ async function loadCronograma() {
     const response = await fetch('database/cronograma.json');
     const items = await response.json();
 
-    const today = new Date();
+    // Para testar o status durante o evento, descomente a linha abaixo e comente a seguinte.
+    // const today = new Date('2025-11-11T10:00:00-03:00'); // Data de teste
+    const today = new Date(); // Data atual
+
     today.setHours(0, 0, 0, 0);
 
     const statusConfig = {
