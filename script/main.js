@@ -85,9 +85,11 @@ async function loadProgramacao() {
     const sessoes = await response.json();
 
     sessoes.sort((a, b) => {
-      const numA = parseInt(a.sessionTitle.match(/\d+/)?.[0] || '999', 10);
-      const numB = parseInt(b.sessionTitle.match(/\d+/)?.[0] || '999', 10);
-      return numA - numB;
+      // Fallback to a high number if no number is found in the title
+      const numA = parseInt(a.sessionTitle?.match(/\d+/)?.[0] || '9999', 10);
+      const numB = parseInt(b.sessionTitle?.match(/\d+/)?.[0] || '9999', 10);
+      if (numA !== numB) return numA - numB;
+      return a.sessionTitle.localeCompare(b.sessionTitle); // Secondary sort by title
     });
 
     // Otimização: Agrupar sessões por dia para renderizar de uma vez
@@ -249,12 +251,29 @@ function setupBackToTopButton() {
   });
 }
 
+// Smooth Scrolling for Anchor Links
+function setupSmoothScrolling() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateCountdown, 1000);
   updateCountdown();
   setActiveNavLink();
   window.addEventListener('hashchange', setActiveNavLink);
   setupTabs();
+  setupSmoothScrolling();
   setupBackToTopButton();
   loadProgramacao();
   loadCronograma();
