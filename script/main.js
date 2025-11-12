@@ -25,24 +25,41 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
 
 // Countdown Timer
 function updateCountdown() {
-  const eventDate = new Date('2025-11-10T08:00:00-03:00');
+  const eventStartDate = new Date('2025-11-10T08:00:00-03:00');
+  const eventEndDate = new Date('2025-11-14T00:00:00-03:00'); // Data para a mensagem final
   const now = new Date();
-  const diff = eventDate - now;
   const countdownElement = document.getElementById('countdown');
   if (!countdownElement) return;
 
-  if (diff <= 0) {
-    countdownElement.innerHTML = 'O evento começou!';
+  const faltamText = countdownElement.previousElementSibling;
+
+  if (now >= eventEndDate) {
+    countdownElement.innerHTML = '<span class="text-3xl font-bold text-white">Até a próxima edição!</span>';
+    if (faltamText && faltamText.tagName === 'P') faltamText.style.display = 'none';
     return;
   }
+
+  if (now >= eventStartDate) {
+    countdownElement.innerHTML = '<span class="text-3xl font-bold text-white">O evento começou!</span>';
+    if (faltamText && faltamText.tagName === 'P') faltamText.style.display = 'none';
+    return;
+  }
+
+  const diff = eventStartDate - now;
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-  document.getElementById('days').textContent = days.toString().padStart(2, '0');
-  document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-  document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-  document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+  countdownElement.innerHTML = `
+    <span id="days" class="bg-ufc-green/20 px-3 py-1 rounded-lg" aria-label="Dias restantes">${days.toString().padStart(2, '0')}</span>
+    <span>dias</span>
+    <span id="hours" class="bg-ufc-green/20 px-3 py-1 rounded-lg" aria-label="Horas restantes">${hours.toString().padStart(2, '0')}</span>
+    <span>horas</span>
+    <span id="minutes" class="bg-ufc-green/20 px-3 py-1 rounded-lg" aria-label="Minutos restantes">${minutes.toString().padStart(2, '0')}</span>
+    <span>minutos</span>
+    <span id="seconds" class="bg-ufc-green/20 px-3 py-1 rounded-lg" aria-label="Segundos restantes">${seconds.toString().padStart(2, '0')}</span>
+    <span>segundos</span>
+  `;
 }
 
 // Dynamic aria-current for navigation

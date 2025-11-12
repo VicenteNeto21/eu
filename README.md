@@ -10,10 +10,13 @@ O tema deste ano é **"Mundo em transformação"**, e o site foi projetado para 
 
 - **Design Responsivo**: Totalmente adaptável para desktops, tablets e celulares.
 - **Contador Regressivo**: Mostra o tempo restante para o início do evento.
+- **Navegação Otimizada**: Rolagem suave entre as seções e um botão "Voltar ao Topo" para melhor usabilidade.
 - **Carregamento Dinâmico de Dados**: A programação e o cronograma são carregados a partir de arquivos JSON, facilitando a atualização.
-- **Busca na Programação**: Permite que os usuários pesquisem por título de trabalho ou nome do autor.
 - **Navegação por Abas**: A programação é organizada por dias (10, 11 e 12 de novembro) em abas.
+- **Filtro na Programação**: Permite que os usuários filtrem as apresentações por sessão, facilitando a localização de eventos específicos.
 - **Status do Cronograma**: As atividades do cronograma são atualizadas dinamicamente com status ("Encerrado", "Em andamento", "Em breve") com base na data atual.
+- **Menu de Edições Anteriores**: Um menu suspenso (dropdown) que oferece acesso rápido aos sites das edições passadas do evento.
+- **Animações Suaves**: A interface é enriquecida com transições e animações sutis, como a abertura do menu móvel, para uma experiência de usuário mais fluida.
 - **Meta Tags de SEO e Redes Sociais**: Otimizado para motores de busca e para um bom compartilhamento em redes sociais (Open Graph e Twitter Cards).
 
 ## 📂 Estrutura do Projeto
@@ -57,6 +60,7 @@ Depois de iniciar o servidor, acesse `http://localhost:8000` (ou a porta indicad
 - **HTML5**: Estrutura da página.
 - **Tailwind CSS**: Framework CSS para estilização rápida e responsiva.
 - **JavaScript (ES6+)**: Lógica do site, incluindo manipulação do DOM e requisições assíncronas.
+- **Animate.css**: Biblioteca para animações de entrada de elementos.
 
 ## 📄 Arquivos de Dados
 
