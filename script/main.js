@@ -1,18 +1,25 @@
 // Mobile Menu Toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuIcon = mobileMenuButton.querySelector('svg');
 
 mobileMenuButton.addEventListener('click', () => {
   const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
   mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-  mobileMenu.classList.toggle('hidden');
+
+  if (!isExpanded) {
+    mobileMenu.classList.remove('max-h-0', 'opacity-0');
+    mobileMenu.classList.add('max-h-screen', 'opacity-100', 'p-4'); // Use max-h-screen for a safe large value
+  } else {
+    mobileMenu.classList.remove('max-h-screen', 'opacity-100', 'p-4');
+    mobileMenu.classList.add('max-h-0', 'opacity-0');
+  }
 });
 
 // Close mobile menu when a link is clicked
 document.querySelectorAll('.mobile-nav-link').forEach(link => {
   link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    mobileMenuButton.click(); // Simulate a click to close the menu with animation
   });
 });
 
@@ -307,12 +314,50 @@ function setupSmoothScrolling() {
   });
 }
 
+// Dropdown Menu
+function setupDropdowns() {
+  const dropdowns = document.querySelectorAll('[data-dropdown]');
+
+  dropdowns.forEach(dropdown => {
+    const toggleButton = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    const icon = toggleButton.querySelector('svg');
+
+    toggleButton.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+      toggleButton.setAttribute('aria-expanded', !isExpanded);
+      menu.classList.toggle('hidden');
+      if (icon) {
+        icon.classList.toggle('rotate-180');
+      }
+    });
+  });
+
+  // Close dropdown when clicking outside
+  window.addEventListener('click', (event) => {
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(event.target)) {
+        const toggleButton = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        const icon = toggleButton.querySelector('svg');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        menu.classList.add('hidden');
+        if (icon) {
+          icon.classList.remove('rotate-180');
+        }
+      }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateCountdown, 1000);
   updateCountdown();
   setActiveNavLink();
   window.addEventListener('hashchange', setActiveNavLink);
   setupTabs();
+  setupDropdowns();
   setupSmoothScrolling();
   setupBackToTopButton();
   loadProgramacao();
